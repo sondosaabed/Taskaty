@@ -2,5 +2,20 @@
     <string name="app_name">Taskaty</string>
     <string name="welcome">Welcome To Taskaty!</string>
     <string name="start">Getting Started</string>
-    <string name="about">Your go-to simple task managmnet app. Your tool for effortlessly organainzg tasks.</string>
+    <string name="about">Your go-to simple task management app. Your tool for effortlessly organising tasks.</string>
+    <string name="newTask">New Task</string>
+    <string name="title">Title</string>
+    <string name="create">Create a new Task</string>
+    <string name="description">Description</string>
+    <string name="due">Due Date</string>
+    <string name="category">Category</string>
+    <string name="about_image">This image indicates a task with a dreamy girl</string>
+    <string-array name="category_array">
+        <item>None</item>
+        <item>Personal</item>
+        <item>Work</item>
+        <item>Shopping</item>
+        <item>To-read</item>
+        <item>To-watch</item>
+    </string-array>
 </resources>
