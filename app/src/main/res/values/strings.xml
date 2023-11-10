@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Taskaty</string>
+    <string name="welcome">Welcome To Taskaty!</string>
+    <string name="start">Getting Started</string>
+    <string name="about">Your go-to simple task managmnet app. Your tool for effortlessly organainzg tasks.</string>
+</resources>
