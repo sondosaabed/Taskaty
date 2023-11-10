@@ -10,6 +10,8 @@
     <string name="due">Due Date</string>
     <string name="category">Category</string>
     <string name="about_image">This image indicates a task with a dreamy girl</string>
+    <string name="completed">Your Task is Complete!</string>
+    <string name="check_tasks">Wanna Check your List?</string>
     <string-array name="category_array">
         <item>None</item>
         <item>Personal</item>
