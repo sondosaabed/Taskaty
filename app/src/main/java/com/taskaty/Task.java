@@ -13,28 +13,21 @@ public class Task {
     private String title; // The title of the task ex: Shopping For Mom
     private Boolean isDone = false; // If true then it is done, if false then it's to do
     private String description; // A description of the task I will make it optional
-    private String category; // Personal, Work, Shopping, to-read, to-watch
+    private String category ="None"; // Personal, Work, Shopping, to-read, to-watch, None (I will make it optional
     private Date dueDate; // They can set the due date of the task
 
     /*
         Constructors
      */
-    public Task(String title, Date dueDate) {
-        this.title = title;
-        this.dueDate = dueDate;
-    }
-
-    public Task(String title, String category, Date dueDate) {
-        this.title = title;
-        this.category = category;
-        this.dueDate = dueDate;
-    }
-
     public Task(String title, String description, String category, Date dueDate) {
-        this.title = title;
-        this.description = description;
-        this.category = category;
-        this.dueDate = dueDate;
+        setTitle(title);
+        setDueDate(dueDate);
+        if (category != null && !category.isEmpty()) {
+            setCategory(category);
+        }
+        if (description != null && !description.isEmpty()) {
+            setDescription(description);
+        }
     }
 
     /*
