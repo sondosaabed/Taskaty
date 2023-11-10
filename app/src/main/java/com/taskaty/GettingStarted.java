@@ -9,6 +9,9 @@ import android.widget.Button;
     start
  */
 public class GettingStarted extends AppCompatActivity {
+    /*
+        Attributes
+     */
     Button start;
 
     @Override
@@ -19,7 +22,7 @@ public class GettingStarted extends AppCompatActivity {
 
     private void initialize() {
         getSupportActionBar().hide();
-        setContentView(R.layout.gettingstarted);
+        setContentView(R.layout.getting_started);
         setStart(findViewById(R.id.start));
         handle_start(getStart());
     }
