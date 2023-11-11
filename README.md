@@ -4,7 +4,7 @@ Taskaty is your go-to simple task managmnet mobile app. Your tool for effortless
 ## Demo
 
 ## UI/UX
-![TaskatyDesign](https://github.com/sondosaabed/Taskaty/assets/65151701/b01816b1-5202-41d1-b1fa-ab4e02f5d401)
+![TaskatyDesign](https://github.com/sondosaabed/Taskaty/assets/65151701/b30eb054-640e-4294-a0db-b468641f073b)
 
 ## Resources
 - [Undraw for illustrations](https://undraw.co/search) 
