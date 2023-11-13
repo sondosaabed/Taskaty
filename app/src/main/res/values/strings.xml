@@ -1,22 +1,18 @@
 <resources>
+    <!--    Images Descriptons-->
+    <string name="about_image">This image indicates a task with a dreamy girl</string>
+    <string name="about_image_1">This image indicates a new image to be added</string>
+
+    <!--    Getting Started Activity -->
     <string name="app_name">Taskaty</string>
     <string name="welcome">Welcome To Taskaty!</string>
     <string name="start">Getting Started</string>
     <string name="about">Your go-to simple task management app. Your tool for effortlessly organising tasks.</string>
-    <string name="newTask">New Task</string>
-    <string name="updateTask">Update Task</string>
-    <string name="title">Title</string>
-    <string name="create">Create a new Task</string>
-    <string name="update">Update Task</string>
-    <string name="done">Done</string>
-    <string name="update_date">Update Date</string>
+
+    <!--    Shared on both Add & Update-->
     <string name="description">Description</string>
     <string name="due">Due Date</string>
     <string name="category">Category</string>
-    <string name="about_image">This image indicates a task with a dreamy girl</string>
-    <string name="about_image_1">This image indicates a new image to be added</string>
-    <string name="completed">Your Task is Complete!</string>
-    <string name="check_tasks">Want to Check your List?</string>
     <string-array name="category_array">
         <item>None</item>
         <item>Personal</item>
@@ -25,4 +21,19 @@
         <item>To-read</item>
         <item>To-watch</item>
     </string-array>
+
+    <!--    Adding new task activity -->
+    <string name="newTask">New Task</string>
+    <string name="title">Title</string>
+    <string name="create">Create a new Task</string>
+
+    <!--    Update Task Activity -->
+    <string name="updateTask">Update Task</string>
+    <string name="update">Update Task</string>
+    <string name="done">Done</string>
+    <string name="update_date">Update Date</string>
+
+    <!--    Completed Task Activity -->
+    <string name="completed">Your Task is Complete!</string>
+    <string name="check_tasks">Want to Check your List?</string>
 </resources>
