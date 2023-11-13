@@ -4,8 +4,12 @@
     <string name="start">Getting Started</string>
     <string name="about">Your go-to simple task management app. Your tool for effortlessly organising tasks.</string>
     <string name="newTask">New Task</string>
+    <string name="updateTask">Update Task</string>
     <string name="title">Title</string>
     <string name="create">Create a new Task</string>
+    <string name="update">Update Task</string>
+    <string name="done">Done</string>
+    <string name="update_date">Update Date</string>
     <string name="description">Description</string>
     <string name="due">Due Date</string>
     <string name="category">Category</string>
