@@ -27,6 +27,10 @@
     <string name="title">Title</string>
     <string name="create">Create a new Task</string>
 
+    <!--    Added Task Activity-->
+    <string name="added">Your New Task is Added!</string>
+    <string name="back_to_life">Hop Back to Work!</string>
+
     <!--    Update Task Activity -->
     <string name="updateTask">Update Task</string>
     <string name="update">Update Task</string>
@@ -34,6 +38,9 @@
     <string name="update_date">Update Date</string>
 
     <!--    Completed Task Activity -->
-    <string name="completed">Your Task is Complete!</string>
+    <string name="completed">Your Task is Completed!</string>
     <string name="check_tasks">Want to Check your List?</string>
+
+    <!--    Updated Task Activity -->
+    <string name="updated">Your Task is Updated!</string>
 </resources>
