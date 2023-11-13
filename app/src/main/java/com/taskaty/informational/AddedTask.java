@@ -16,6 +16,6 @@ public class AddedTask extends AppCompatActivity {
     }
 
     private void initialize() {
-        setContentView(R.layout.completed);
+        setContentView(R.layout.added);
     }
 }

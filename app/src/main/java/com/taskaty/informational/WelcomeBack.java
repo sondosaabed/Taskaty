@@ -27,7 +27,7 @@ public class WelcomeBack extends AppCompatActivity {
 
     private void initialize() {
         getSupportActionBar().hide();
-        setContentView(R.layout.getting_started);
+        setContentView(R.layout.welcome_back);
         setStart(findViewById(R.id.start));
         handle_start(getStart());
     }
