@@ -1,5 +1,6 @@
 # Taskaty
-Taskaty is your go-to simple task managmnet mobile app. Your tool for effortlessly organainzg tasks.
+Taskaty is your go-to simple task managmnet mobile app. Your tool for effortlessly organainzg tasks. 
+A complete Android app that can assist users in managing their tasks, realistic and provides real service to users. 
 
 ## Demo
 
