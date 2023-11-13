@@ -39,11 +39,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="219dp"
-        android:layout_height="390dp"
+        android:layout_width="395dp"
+        android:layout_height="329dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/complete" />
+        app:srcCompat="@drawable/completed" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
