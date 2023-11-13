@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 /*
-    I have created this activity to enable the user to add a new task to their list
+    I have created this activity to enable the user to update an existing task, for example to set it as done
  */
 public class UpdateTask extends AppCompatActivity {
     Button update;
@@ -48,8 +48,8 @@ public class UpdateTask extends AppCompatActivity {
 
         });
     }
-    private void handle_add(Button add){
-        add.setOnClickListener(view->{
+    private void handle_add(Button update){
+        update.setOnClickListener(view->{
 
         });
     }
