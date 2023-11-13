@@ -24,12 +24,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.055" />
 
     <ListView
         android:id="@+id/taskListView"
-        android:layout_width="405dp"
-        android:layout_height="532dp"
+        android:layout_width="348dp"
+        android:layout_height="489dp"
         android:background="@android:color/background_light"
         android:clipToPadding="false"
         android:divider="@android:color/darker_gray"
@@ -39,18 +39,20 @@
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.421" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="307dp"
-        android:layout_height="168dp"
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="219dp"
+        android:layout_height="133dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/about_image_1"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
