@@ -10,6 +10,7 @@ public class Task {
     /*
         Attributes
      */
+    private int id;
     private String title; // The title of the task ex: Shopping For Mom
     private Boolean isDone = false; // If true then it is done, if false then it's to do
     private String description; // A description of the task I will make it optional
@@ -71,5 +72,13 @@ public class Task {
 
     public void setDueDate(Date date) {
         this.dueDate = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
