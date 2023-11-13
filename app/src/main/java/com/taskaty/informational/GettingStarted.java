@@ -1,10 +1,13 @@
-package com.taskaty;
+package com.taskaty.informational;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.taskaty.taskManagment.Home;
+import com.taskaty.R;
 
 /*
     This is the starting activity of the mobile app, the user is able to

@@ -1,4 +1,4 @@
-package com.taskaty;
+package com.taskaty.model;
 
 import java.util.Date;
 

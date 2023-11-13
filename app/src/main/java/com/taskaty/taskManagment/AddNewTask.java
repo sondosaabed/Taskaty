@@ -1,4 +1,4 @@
-package com.taskaty;
+package com.taskaty.taskManagment;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -8,6 +8,9 @@ import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.taskaty.R;
+
 /*
     I have created this activity to enable the user to add a new task to their list
  */

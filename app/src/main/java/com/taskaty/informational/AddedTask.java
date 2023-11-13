@@ -1,10 +1,12 @@
-package com.taskaty;
+package com.taskaty.informational;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.taskaty.R;
 
 public class AddedTask extends AppCompatActivity {
     @Override

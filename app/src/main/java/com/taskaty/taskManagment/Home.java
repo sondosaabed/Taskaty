@@ -1,4 +1,4 @@
-package com.taskaty;
+package com.taskaty.taskManagment;
 
 
 import android.content.Intent;
@@ -7,6 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.taskaty.R;
+import com.taskaty.model.Task;
+
 import java.util.ArrayList;
 import java.util.List;
 
