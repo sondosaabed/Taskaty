@@ -8,9 +8,6 @@
 
 
     <!-- ListView to display tasks -->
-
-    <!-- Floating Action Button for adding a new task -->
-
     <TextView
         android:id="@+id/appName2"
         android:layout_width="150dp"
