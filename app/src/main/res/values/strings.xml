@@ -9,6 +9,11 @@
     <string name="start">Getting Started</string>
     <string name="about">Your go-to simple task management app. Your tool for effortlessly organising tasks.</string>
 
+    <!--    Welcome Back Activity -->
+    <string name="welcome_back">Welcome Back To Taskaty!</string>
+    <string name="back">Back to Tasks</string>
+    <string name="about_back">Yayy, You made it back to Your go-to simple task management app.</string>
+
     <!--    Shared on both Add & Update-->
     <string name="description">Description</string>
     <string name="due">Due Date</string>
@@ -43,4 +48,6 @@
 
     <!--    Updated Task Activity -->
     <string name="updated">Your Task is Updated!</string>
+
+
 </resources>
