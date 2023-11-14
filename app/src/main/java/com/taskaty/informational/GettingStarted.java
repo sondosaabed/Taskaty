@@ -3,6 +3,7 @@ package com.taskaty.informational;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -22,7 +23,30 @@ public class GettingStarted extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize();
+        /*
+            Check if it's the first time for the user using taskaty
+            if so show them getting started otherwise show them welcome back
+            for more personalized experience
+         */
+        if (isFirstTime()) {
+            setNotFirstTime();
+            setContentView(R.layout.getting_started);
+            initialize();
+        } else {
+            startActivity(new Intent(this, WelcomeBack.class));
+            finish();
+        }
+    }
+    private boolean isFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        return preferences.getBoolean("is_first_time", true);
+    }
+
+    private void setNotFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("is_first_time", false);
+        editor.apply();
     }
 
     private void initialize() {

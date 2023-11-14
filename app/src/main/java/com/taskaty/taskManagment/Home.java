@@ -23,8 +23,7 @@ public class Home extends AppCompatActivity{
 
     List<Task> dueTasks = new ArrayList<>(); // Implement this method to get due tasks.
 
-    ArrayAdapter<Task> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dueTasks);
-
+    //ArrayAdapter<Task> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dueTasks);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,9 +33,12 @@ public class Home extends AppCompatActivity{
 
     private void initialize() {
         setContentView(R.layout.home);
+
         setAdd(findViewById(R.id.add));
         setTasks(findViewById(R.id.taskListView));
-        getTasks().setAdapter(adapter);
+
+        //getTasks().setAdapter(adapter);
+
         handle_add(getAdd());
         handle_taskClick(getTasks());
     }
