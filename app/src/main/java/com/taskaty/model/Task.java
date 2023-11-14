@@ -31,6 +31,11 @@ public class Task {
         }
     }
 
+    public Task(String title, String description) {
+        setTitle(title);
+        setDescription(description);
+    }
+
     /*
         Getters & Setters
     */
