@@ -1,9 +1,11 @@
 package com.taskaty.taskManagment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -12,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
+import com.taskaty.informational.CompletedTask;
+import com.taskaty.informational.UpdatedTask;
 
 import java.util.Calendar;
 
@@ -25,6 +29,7 @@ public class UpdateTask extends AppCompatActivity {
     Button updateDate;
     EditText date;
     Spinner categorySpinner;
+    CheckBox isDone;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ public class UpdateTask extends AppCompatActivity {
         setDate(findViewById(R.id.dateEditTextUpdate));
         setCategorySpinner(findViewById(R.id.categorySpinnerUpdate));
         setUpdateDate(findViewById(R.id.uodateDate));
+        setIsDone(findViewById(R.id.isDone));
 
         handle_date(getUpdateDate());
         handle_add(getUpdate());
@@ -71,7 +77,13 @@ public class UpdateTask extends AppCompatActivity {
     }
     private void handle_add(Button update){
         update.setOnClickListener(view->{
-
+            Intent intent = null;
+            if(getIsDone().isChecked()){
+                intent = new Intent(this, CompletedTask.class);
+            } else if (!getIsDone().isChecked()) {
+                intent = new Intent(this, UpdatedTask.class);
+            }
+            startActivity(intent);
         });
     }
     /*
@@ -124,5 +136,13 @@ public class UpdateTask extends AppCompatActivity {
 
     public void setCategorySpinner(Spinner categorySpinner) {
         this.categorySpinner = categorySpinner;
+    }
+
+    public void setIsDone(CheckBox isDone) {
+        this.isDone = isDone;
+    }
+
+    public CheckBox getIsDone() {
+        return isDone;
     }
 }
