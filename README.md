@@ -5,8 +5,7 @@ A complete Android app that can assist users in managing their tasks, realistic 
 ## Demo
 
 ## UI/UX
-![TaskatyDesign](https://github.com/sondosaabed/Taskaty/assets/65151701/2eaa2ca3-ec75-4a42-a106-7dcf2893d922)
-
+- [Taskaty Mobile App UI](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
 
 ## Resources
 - [Undraw for illustrations](https://undraw.co/search) 
@@ -15,3 +14,5 @@ A complete Android app that can assist users in managing their tasks, realistic 
 - [Stackoverflow](https://stackoverflow.com/questions/30216233/how-to-hide-app-name-from-title-bar-in-android)
 - [Previous project I made](https://github.com/sondosaabed/Tasks-list-Managment-System/tree/main)
 - [Date Picker](https://www.geeksforgeeks.org/datepicker-in-android/)
+- [Caffe Menu Project](https://github.com/szainbzu/CaffeeMenu/tree/master)
+- [GSOn DEMo](https://github.com/szainbzu/GSONDemo1/tree/master)
