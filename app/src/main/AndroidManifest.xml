@@ -24,7 +24,7 @@
         <activity android:name="com.taskaty.informational.StatusInform" android:exported="false"/>
 
         <!--    TaskMangamnet package    -->
-        <activity android:name="com.taskaty.taskManagment.Home" android:exported="false"/>
+        <activity android:name="com.taskaty.taskManagment.TasksList" android:exported="false"/>
         <activity android:name="com.taskaty.taskManagment.AddNewTask" android:exported="true"/>
         <activity android:name="com.taskaty.taskManagment.UpdateTask" android:exported="true"></activity>
 

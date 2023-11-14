@@ -7,7 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
-import com.taskaty.taskManagment.Home;
+import com.taskaty.taskManagment.TasksList;
 
 /*
     This is the starting activity of the mobile app, the user is able to
@@ -34,7 +34,7 @@ public class WelcomeBack extends AppCompatActivity {
 
     private void handle_start(Button start) {
         start.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Home.class);
+            Intent intent = new Intent(this, TasksList.class);
             startActivity(intent);
         });
     }

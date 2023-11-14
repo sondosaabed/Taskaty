@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.taskaty.taskManagment.Home;
+import com.taskaty.taskManagment.TasksList;
 import com.taskaty.R;
 
 /*
@@ -58,7 +58,7 @@ public class GettingStarted extends AppCompatActivity {
 
     private void handle_start(Button start) {
         start.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Home.class);
+            Intent intent = new Intent(this, TasksList.class);
             startActivity(intent);
         });
     }

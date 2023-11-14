@@ -3,7 +3,6 @@ package com.taskaty.taskManagment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +16,7 @@ import java.util.List;
 /*
     This is the main app activity
  */
-public class Home extends AppCompatActivity{
+public class TasksList extends AppCompatActivity{
     ImageButton add;
     ListView tasks;
 
@@ -49,7 +48,7 @@ public class Home extends AppCompatActivity{
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
             Task selectedTask = dueTasks.get(position);
-            Intent intent = new Intent(Home.this, UpdateTask.class);
+            Intent intent = new Intent(TasksList.this, UpdateTask.class);
             intent.putExtra("selectedTask", (CharSequence) selectedTask);
             startActivity(intent);
         });

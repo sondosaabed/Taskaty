@@ -3,10 +3,12 @@ package com.taskaty.informational;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
-import com.taskaty.taskManagment.Home;
+import com.taskaty.taskManagment.TasksList;
 
 public class StatusInform extends AppCompatActivity {
     /*
@@ -21,7 +23,8 @@ public class StatusInform extends AppCompatActivity {
         initialize(status);
     }
 
-    private void initialize(String status) {
+    private void initialize(@NonNull String status) {
+        // Based on the status the status layout will be shown
         if(status.equals("completed")){
             setContentView(R.layout.completed);
         } else if (status.equals("updated")) {
@@ -35,7 +38,7 @@ public class StatusInform extends AppCompatActivity {
 
     private void handle_back(Button back) {
         back.setOnClickListener(veiw ->{
-            Intent intent = new Intent(this, Home.class);
+            Intent intent = new Intent(this, TasksList.class);
             startActivity(intent);
         });
     }
