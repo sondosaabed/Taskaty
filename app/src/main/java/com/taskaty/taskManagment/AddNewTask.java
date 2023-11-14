@@ -1,19 +1,20 @@
 package com.taskaty.taskManagment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
+import com.taskaty.informational.StatusInform;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /*
     I have created this activity to enable the user to add a new task to their list
@@ -74,7 +75,18 @@ public class AddNewTask extends AppCompatActivity {
     }
     private void handle_add(Button add){
         add.setOnClickListener(view->{
+            String title = gettitle().getText().toString().trim();
+            String description = getDescription().getText().toString().trim();
+            Date date ;// getDate().getText().toString().trim();
+            String categorySpinner = getCategorySpinner().getSelectedItem().toString().trim();
 
+            if(!title.isEmpty()){
+                Intent intent = new Intent(this, StatusInform.class);
+                intent.putExtra("status", "added");
+                startActivity(intent);
+            }else{
+
+            }
         });
     }
     /*

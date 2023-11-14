@@ -21,9 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.taskaty.informational.WelcomeBack" android:exported="true"/>
-        <activity android:name="com.taskaty.informational.CompletedTask" android:exported="false"/>
-        <activity android:name="com.taskaty.informational.AddedTask" android:exported="false"/>
-        <activity android:name="com.taskaty.informational.UpdatedTask" android:exported="false"/>
+        <activity android:name="com.taskaty.informational.StatusInform" android:exported="false"/>
 
         <!--    TaskMangamnet package    -->
         <activity android:name="com.taskaty.taskManagment.Home" android:exported="false"/>

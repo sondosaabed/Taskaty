@@ -3,19 +3,16 @@ package com.taskaty.taskManagment;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
-import com.taskaty.informational.CompletedTask;
-import com.taskaty.informational.UpdatedTask;
+import com.taskaty.informational.StatusInform;
 
 import java.util.Calendar;
 
@@ -82,9 +79,11 @@ public class UpdateTask extends AppCompatActivity {
         update.setOnClickListener(view->{
             Intent intent = null;
             if(getIsDone().isChecked()){
-                intent = new Intent(this, CompletedTask.class);
+                intent = new Intent(this, StatusInform.class);
+                intent.putExtra("status", "completed");
             } else if (!getIsDone().isChecked()) {
-                intent = new Intent(this, UpdatedTask.class);
+                intent = new Intent(this, StatusInform.class);
+                intent.putExtra("status", "updated");
             }
             startActivity(intent);
         });
