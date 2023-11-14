@@ -1,8 +1,10 @@
 package com.taskaty.taskManagment;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -10,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
+
+import java.util.Calendar;
 
 /*
     I have created this activity to enable the user to add a new task to their list
@@ -23,8 +27,8 @@ public class AddNewTask extends AppCompatActivity {
     Spinner categorySpinner;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         initialize();
     }
 
@@ -45,7 +49,22 @@ public class AddNewTask extends AppCompatActivity {
      */
     private void handle_date(Button date){
         date.setOnClickListener(view->{
+            final Calendar c = Calendar.getInstance();
 
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(
+                    AddNewTask.this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            getDate().setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                        }
+                    }
+                    ,year, month, day);
+            datePickerDialog.show();
         });
     }
     private void handle_add(Button add){
