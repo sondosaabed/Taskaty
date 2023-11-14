@@ -12,17 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskaty"
         tools:targetApi="31">
-        <activity
-            android:name="com.taskaty.GettingStarted"
-            android:exported="true">
+
+        <!--    Informational package    -->
+        <activity android:name="com.taskaty.informational.GettingStarted" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.taskaty.Home" android:exported="false"/>
-        <activity android:name="com.taskaty.AddNewTask"
-            android:exported="false"/>
+        <activity android:name="com.taskaty.informational.WelcomeBack" android:exported="true"/>
+        <activity android:name="com.taskaty.informational.CompletedTask" android:exported="false"/>
+        <activity android:name="com.taskaty.informational.AddedTask" android:exported="false"/>
+        <activity android:name="com.taskaty.informational.UpdatedTask" android:exported="false"/>
+
+        <!--    TaskMangamnet package    -->
+        <activity android:name="com.taskaty.taskManagment.Home" android:exported="false"/>
+        <activity android:name="com.taskaty.taskManagment.AddNewTask" android:exported="true"/>
+        <activity android:name="com.taskaty.taskManagment.UpdateTask" android:exported="true"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
