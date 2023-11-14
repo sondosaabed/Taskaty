@@ -3,12 +3,14 @@ package com.taskaty.taskManagment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
 import com.taskaty.model.Task;
+import com.taskaty.model.Tasks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +33,17 @@ public class TasksList extends AppCompatActivity{
     }
 
     private void initialize() {
+        getSupportActionBar().hide();
         setContentView(R.layout.home);
 
         setAdd(findViewById(R.id.add));
         setTasks(findViewById(R.id.taskListView));
 
-        //getTasks().setAdapter(adapter);
+        ArrayAdapter<Task> listAdapter = new ArrayAdapter<Task>(this,
+                android.R.layout.simple_list_item_1,
+                Tasks.getTasks());
+
+        getTasks().setAdapter(listAdapter);
 
         handle_add(getAdd());
         handle_taskClick(getTasks());
@@ -49,7 +56,7 @@ public class TasksList extends AppCompatActivity{
         tasks.setOnItemClickListener((parent, view, position, id) -> {
             Task selectedTask = dueTasks.get(position);
             Intent intent = new Intent(TasksList.this, UpdateTask.class);
-            intent.putExtra("selectedTask", (CharSequence) selectedTask);
+            intent.putExtra("selectedTaskID", selectedTask.getId());
             startActivity(intent);
         });
     }

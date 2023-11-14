@@ -24,6 +24,8 @@ public class StatusInform extends AppCompatActivity {
     }
 
     private void initialize(@NonNull String status) {
+        getSupportActionBar().hide();
+
         // Based on the status the status layout will be shown
         if(status.equals("completed")){
             setContentView(R.layout.completed);

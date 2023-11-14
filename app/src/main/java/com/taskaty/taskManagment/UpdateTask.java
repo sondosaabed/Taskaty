@@ -35,6 +35,7 @@ public class UpdateTask extends AppCompatActivity {
     }
 
     private void initialize() {
+        getSupportActionBar().hide();
         setContentView(R.layout.update_task);
 
         setUpdate(findViewById(R.id.updateTaskButton));

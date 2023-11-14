@@ -34,6 +34,7 @@ public class AddNewTask extends AppCompatActivity {
     }
 
     private void initialize() {
+        getSupportActionBar().hide();
         setContentView(R.layout.add_new_task);
 
         setAdd(findViewById(R.id.createTaskButton));
