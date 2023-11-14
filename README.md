@@ -6,6 +6,8 @@ A complete Android app that can assist users in managing their tasks, realistic 
 
 ## UI/UX
 - [Taskaty Mobile App UI](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
+![image](https://github.com/sondosaabed/Taskaty/assets/65151701/5ac63f70-dd43-46fd-80cb-1f9fc844c41a)
+
 
 ## Resources
 - [Undraw for illustrations](https://undraw.co/search) 
