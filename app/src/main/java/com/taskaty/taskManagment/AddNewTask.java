@@ -34,12 +34,14 @@ public class AddNewTask extends AppCompatActivity {
 
     private void initialize() {
         setContentView(R.layout.add_new_task);
+
         setAdd(findViewById(R.id.createTaskButton));
         setTitle((EditText) findViewById(R.id.titleEditText));
         setDescription(findViewById(R.id.descriptionEditText));
         setDate(findViewById(R.id.dateEditText));
         setCategorySpinner(findViewById(R.id.categorySpinner));
         setPickDate(findViewById(R.id.pickDate));
+
         handle_date(getPickDate());
         handle_add(getAdd());
     }
@@ -49,6 +51,9 @@ public class AddNewTask extends AppCompatActivity {
      */
     private void handle_date(Button date){
         date.setOnClickListener(view->{
+            /*
+                https://www.geeksforgeeks.org/datepicker-in-android/
+             */
             final Calendar c = Calendar.getInstance();
 
             int year = c.get(Calendar.YEAR);
@@ -102,9 +107,7 @@ public class AddNewTask extends AppCompatActivity {
     public Spinner getCategorySpinner() {
         return categorySpinner;
     }
-    public void setCategorySpinner(Spinner categorySpinner) {
-        this.categorySpinner = categorySpinner;
-    }
+    public void setCategorySpinner(Spinner categorySpinner) {this.categorySpinner = categorySpinner;}
     public Button getPickDate() {
         return pickDate;
     }
