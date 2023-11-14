@@ -47,7 +47,7 @@ public class UpdateTask extends AppCompatActivity {
         setIsDone(findViewById(R.id.isDone));
 
         handle_date(getUpdateDate());
-        handle_add(getUpdate());
+        handle_update(getUpdate());
     }
 
     /*
@@ -76,7 +76,7 @@ public class UpdateTask extends AppCompatActivity {
             datePickerDialog.show();
         });
     }
-    private void handle_add(Button update){
+    private void handle_update(Button update){
         update.setOnClickListener(view->{
             Intent intent = null;
             if(getIsDone().isChecked()){
@@ -99,10 +99,6 @@ public class UpdateTask extends AppCompatActivity {
 
     public void setUpdate(Button update) {
         this.update = update;
-    }
-
-    public EditText getttitle() {
-        return title;
     }
 
     public void setTitle(EditText title) {

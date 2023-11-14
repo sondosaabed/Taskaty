@@ -1,5 +1,7 @@
 package com.taskaty.model;
 
+import androidx.annotation.NonNull;
+
 import java.util.Date;
 
 /*
@@ -34,6 +36,18 @@ public class Task {
     public Task(String title, String description) {
         setTitle(title);
         setDescription(description);
+    }
+
+
+    @NonNull
+    @Override
+    public String toString() {
+        String title =getTitle();
+        if(isDone){
+            return "✔ ~~~~~~~~" + title + "~~~~~~~";
+        }else{
+            return "▢ " + title;
+        }
     }
 
     /*

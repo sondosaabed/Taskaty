@@ -22,7 +22,8 @@
         <item>None</item>
         <item>Personal</item>
         <item>Work</item>
-        <item>Shopping</item>
+        <item>Study</item>
+        <item>To-buy</item>
         <item>To-read</item>
         <item>To-watch</item>
     </string-array>

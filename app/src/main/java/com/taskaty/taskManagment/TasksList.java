@@ -34,11 +34,11 @@ public class TasksList extends AppCompatActivity{
 
     private void initialize() {
         getSupportActionBar().hide();
-        setContentView(R.layout.home);
+        setContentView(R.layout.tasks_list);
 
         setAdd(findViewById(R.id.add));
         setTasks(findViewById(R.id.taskListView));
-
+        Tasks.initializeSampleTasks();
         ArrayAdapter<Task> listAdapter = new ArrayAdapter<Task>(this,
                 android.R.layout.simple_list_item_1,
                 Tasks.getTasks());
@@ -54,9 +54,9 @@ public class TasksList extends AppCompatActivity{
         When a user clicks on a list item they are allowed to edit it
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
-            Task selectedTask = dueTasks.get(position);
-            Intent intent = new Intent(TasksList.this, UpdateTask.class);
-            intent.putExtra("selectedTaskID", selectedTask.getId());
+            //Task selectedTask = dueTasks.get(position);
+            Intent intent = new Intent(this, UpdateTask.class);
+            //intent.putExtra("selectedTaskID", selectedTask.getId());
             startActivity(intent);
         });
     }
