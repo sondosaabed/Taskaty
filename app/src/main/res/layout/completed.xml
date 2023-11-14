@@ -29,6 +29,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="@string/completed"
+        android:textColor="#2F2E41"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
