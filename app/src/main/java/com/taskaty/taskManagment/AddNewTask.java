@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
 import com.taskaty.informational.StatusInform;
+import com.taskaty.model.Task;
+import com.taskaty.model.Tasks;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -78,13 +80,32 @@ public class AddNewTask extends AppCompatActivity {
         add.setOnClickListener(view->{
             String title = gettitle().getText().toString().trim();
             String description = getDescription().getText().toString().trim();
-            Date date ;// getDate().getText().toString().trim();
-            String categorySpinner = getCategorySpinner().getSelectedItem().toString().trim();
+
+            /*
+            Handling the date as a string
+             */
+            String dateStr = getDate().getText().toString().trim();
+            String[] dateElments = dateStr.split("-");
+
+            int year= Integer.parseInt(dateElments[2]);
+            int month = Integer.parseInt(dateElments[1]);
+            int day = Integer.parseInt(dateElments[0]);
+
+            Date date = new Date(day,month,year);
+            String category = getCategorySpinner().getSelectedItem().toString().trim();
+
+            Intent intent = new Intent(this, StatusInform.class);
+            intent.putExtra("status", "added");
+            startActivity(intent);
 
             if(!title.isEmpty()){
-                Intent intent = new Intent(this, StatusInform.class);
-                intent.putExtra("status", "added");
-                startActivity(intent);
+                Task newTask = new Task(title, description, category, date);
+                Boolean checkAdd = Tasks.getTasks().add(newTask);
+                if(checkAdd){
+                    Intent intent1 = new Intent(this, StatusInform.class);
+                    intent1.putExtra("status", "added");
+                    startActivity(intent1);
+                }
             }else{
 
             }
