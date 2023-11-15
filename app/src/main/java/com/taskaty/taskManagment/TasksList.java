@@ -12,19 +12,12 @@ import com.taskaty.R;
 import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /*
     This is the main app activity
  */
 public class TasksList extends AppCompatActivity{
     ImageButton add;
-    ListView tasks;
-
-    List<Task> dueTasks = new ArrayList<>(); // Implement this method to get due tasks.
-
-    //ArrayAdapter<Task> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dueTasks);
+    ListView tasksVeiw;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,9 +47,9 @@ public class TasksList extends AppCompatActivity{
         When a user clicks on a list item they are allowed to edit it
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
-            //Task selectedTask = dueTasks.get(position);
+            Task selectedTask = Tasks.getTasks().get(position);
             Intent intent = new Intent(this, UpdateTask.class);
-            //intent.putExtra("selectedTaskID", selectedTask.getId());
+            intent.putExtra("selectedTaskID", selectedTask.getId());
             startActivity(intent);
         });
     }
@@ -80,10 +73,10 @@ public class TasksList extends AppCompatActivity{
     }
 
     public void setTasks(ListView tasks) {
-        this.tasks = tasks;
+        this.tasksVeiw = tasks;
     }
 
     public ListView getTasks() {
-        return tasks;
+        return tasksVeiw;
     }
 }
