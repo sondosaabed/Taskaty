@@ -16,7 +16,7 @@ import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 /*
     I have created this activity to enable the user to add a new task to their list
@@ -91,21 +91,15 @@ public class AddNewTask extends AppCompatActivity {
             int month = Integer.parseInt(dateElments[1]);
             int day = Integer.parseInt(dateElments[0]);
 
-            Date date = new Date(day,month,year);
+            GregorianCalendar date = new GregorianCalendar(day,month,year);
             String category = getCategorySpinner().getSelectedItem().toString().trim();
-
-            Intent intent = new Intent(this, StatusInform.class);
-            intent.putExtra("status", "added");
-            startActivity(intent);
 
             if(!title.isEmpty()){
                 Task newTask = new Task(title, description, category, date);
-                Boolean checkAdd = Tasks.getTasks().add(newTask);
-                if(checkAdd){
-                    Intent intent1 = new Intent(this, StatusInform.class);
-                    intent1.putExtra("status", "added");
-                    startActivity(intent1);
-                }
+                Tasks.addTask(newTask);
+                Intent intent1 = new Intent(this, StatusInform.class);
+                intent1.putExtra("status", "added");
+                startActivity(intent1);
             }else{
 
             }
@@ -145,7 +139,6 @@ public class AddNewTask extends AppCompatActivity {
     public Button getPickDate() {
         return pickDate;
     }
-
     public void setPickDate(Button pickDate) {
         this.pickDate = pickDate;
     }

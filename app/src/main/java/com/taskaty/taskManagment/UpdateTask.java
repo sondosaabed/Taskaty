@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
 import com.taskaty.informational.StatusInform;
-
+import com.taskaty.model.Task;
+import com.taskaty.model.Tasks;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /*
     I have created this activity to enable the user to update an existing task, for example to set it as done
@@ -39,11 +41,12 @@ public class UpdateTask extends AppCompatActivity {
         setContentView(R.layout.update_task);
 
         setUpdate(findViewById(R.id.updateTaskButton));
+        setUpdateDate(findViewById(R.id.uodateDate));
+
         setTitle((EditText) findViewById(R.id.titleEditTextUpdate));
         setDescription(findViewById(R.id.descriptionEditTextUpdate));
         setDate(findViewById(R.id.dateEditTextUpdate));
         setCategorySpinner(findViewById(R.id.categorySpinnerUpdate));
-        setUpdateDate(findViewById(R.id.uodateDate));
         setIsDone(findViewById(R.id.isDone));
 
         handle_date(getUpdateDate());
@@ -78,6 +81,26 @@ public class UpdateTask extends AppCompatActivity {
     }
     private void handle_update(Button update){
         update.setOnClickListener(view->{
+            /*
+            Handling the date as a string
+             */
+            String dateStr = getDate().getText().toString().trim();
+            String[] dateElments = dateStr.split("-");
+
+            int year= Integer.parseInt(dateElments[2]);
+            int month = Integer.parseInt(dateElments[1]);
+            int day = Integer.parseInt(dateElments[0]);
+
+            GregorianCalendar date = new GregorianCalendar(day,month,year);
+            Task updatedtask = new Task(getTitle().toString().trim(),
+                                        getDescription().toString().trim(),
+                                        getCategorySpinner().getSelectedItem().toString(),
+                                        date);
+
+            Tasks.updateTask(0, updatedtask);
+            /*
+                Status information to the user
+             */
             Intent intent = null;
             if(getIsDone().isChecked()){
                 intent = new Intent(this, StatusInform.class);

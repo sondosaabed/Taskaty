@@ -2,7 +2,7 @@ package com.taskaty.model;
 
 import androidx.annotation.NonNull;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 /*
     This is a class that I created to represent the task object
@@ -17,12 +17,12 @@ public class Task {
     private Boolean isDone = false; // If true then it is done, if false then it's to do
     private String description; // A description of the task I will make it optional
     private String category ="None"; // Personal, Work, Shopping, to-read, to-watch, None (I will make it optional
-    private Date dueDate; // They can set the due date of the task
+    private GregorianCalendar dueDate = new GregorianCalendar(); // They can set the due date of the task
 
     /*
         Constructors
      */
-    public Task(String title, String description, String category, Date dueDate) {
+    public Task(String title, String description, String category, GregorianCalendar dueDate) {
         setTitle(title);
         setDueDate(dueDate);
         if (category != null && !category.isEmpty()) {
@@ -85,11 +85,11 @@ public class Task {
         this.category = category;
     }
 
-    public Date getDueDate() {
+    public GregorianCalendar getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date date) {
+    public void setDueDate(GregorianCalendar date) {
         this.dueDate = date;
     }
 
