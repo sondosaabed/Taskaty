@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -102,7 +101,7 @@ public class AddNewTask extends AppCompatActivity {
             String category = getCategorySpinner().getSelectedItem().toString().trim();
 
             if(!title.isEmpty()){
-                Task newTask = new Task(title, description, category, date);
+                Task newTask = new Task(title, description, category, date, false);
                 Tasks.addTask(newTask);
                 Intent intent1 = new Intent(this, StatusInform.class);
                 intent1.putExtra("status", "added");

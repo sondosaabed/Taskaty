@@ -55,15 +55,34 @@ public class UpdateTask extends AppCompatActivity {
         handle_date(getUpdateDate());
         handle_update(getUpdate(), selectedTaskID);
 
-        setValuesToBeUpdated();
+        setValuesToBeUpdated(selectedTaskID);
     }
 
-    private void setValuesToBeUpdated() {
+    private void setValuesToBeUpdated(String selectedTaskID) {
         /*
-            TODO
-             When the usre wants to update a task it's previous values should be there
-             I will add them next step
+             In this method, When the usre wants to update a task it's previous values should be there
          */
+        Task taskToUpdate = Tasks.getTasks().get(Integer.parseInt(selectedTaskID));
+
+        String title = taskToUpdate.getTitle();
+        getTittle().setText(title);
+
+        Boolean isDone = taskToUpdate.getDone();
+        getIsDone().setSelected(isDone);
+
+        String description = taskToUpdate.getDescription();
+        getDescription().setText(description);
+
+        String category = taskToUpdate.getCategory();
+        //getCategorySpinner();
+        /*
+            TODO handle this category value how can I get it
+         */
+
+        GregorianCalendar date = taskToUpdate.getDueDate();
+        String datStr = date.get(GregorianCalendar.DAY_OF_MONTH) +"-"+ date.get(GregorianCalendar.MONTH)+"-"+date.get(GregorianCalendar.YEAR);
+
+        getDate().setText(datStr);
     }
 
     /*
@@ -107,20 +126,24 @@ public class UpdateTask extends AppCompatActivity {
             int day = Integer.parseInt(dateElments[0]);
 
             GregorianCalendar date = new GregorianCalendar(day,month,year);
+            Boolean isDone = getIsDone().isChecked();
+            /*
+                TODO warning is alwyas false why
+             */
             Task updatedtask = new Task(getTitle().toString().trim(),
                                         getDescription().toString().trim(),
                                         getCategorySpinner().getSelectedItem().toString(),
-                                        date);
+                                        date, isDone);
 
             Tasks.updateTask(Integer.parseInt(selectedTaskID), updatedtask);
             /*
                 Status information to the user
              */
             Intent intent = null;
-            if(getIsDone().isChecked()){
+            if(isDone){
                 intent = new Intent(this, StatusInform.class);
                 intent.putExtra("status", "completed");
-            } else if (!getIsDone().isChecked()) {
+            } else if (!isDone) {
                 intent = new Intent(this, StatusInform.class);
                 intent.putExtra("status", "updated");
             }
@@ -138,6 +161,9 @@ public class UpdateTask extends AppCompatActivity {
     }
     public void setTitle(EditText title) {
         this.title = title;
+    }
+    public EditText getTittle() {
+        return title;
     }
     public EditText getDescription() {
         return description;
