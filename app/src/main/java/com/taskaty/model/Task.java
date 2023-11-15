@@ -22,7 +22,7 @@ public class Task {
     /*
         Constructor
      */
-    public Task(String title, String description, String category, GregorianCalendar dueDate) {
+    public Task(String title, String description, String category, GregorianCalendar dueDate, Boolean isDone) {
         setTitle(title);
         /*
                Because these are all optional for the user
@@ -37,6 +37,7 @@ public class Task {
         if (dueDate != null) {
             setDueDate(dueDate);
         }
+        setDone(isDone);
     }
 
     /*
