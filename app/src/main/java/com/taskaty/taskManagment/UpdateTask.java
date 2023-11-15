@@ -33,10 +33,11 @@ public class UpdateTask extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize();
+        String selectedTaskID = getIntent().getStringExtra("selectedTaskID");
+        initialize(selectedTaskID);
     }
 
-    private void initialize() {
+    private void initialize(String selectedTaskID) {
         getSupportActionBar().hide();
         setContentView(R.layout.update_task);
 
@@ -50,7 +51,17 @@ public class UpdateTask extends AppCompatActivity {
         setIsDone(findViewById(R.id.isDone));
 
         handle_date(getUpdateDate());
-        handle_update(getUpdate());
+        handle_update(getUpdate(), selectedTaskID);
+
+        setValuesToBeUpdated();
+    }
+
+    private void setValuesToBeUpdated() {
+        /*
+            TODO
+             When the usre wants to update a task it's previous values should be there
+             I will add them next step
+         */
     }
 
     /*
@@ -79,7 +90,7 @@ public class UpdateTask extends AppCompatActivity {
             datePickerDialog.show();
         });
     }
-    private void handle_update(Button update){
+    private void handle_update(Button update, String selectedTaskID){
         update.setOnClickListener(view->{
             /*
             Handling the date as a string
@@ -97,7 +108,7 @@ public class UpdateTask extends AppCompatActivity {
                                         getCategorySpinner().getSelectedItem().toString(),
                                         date);
 
-            Tasks.updateTask(0, updatedtask);
+            Tasks.updateTask(Integer.parseInt(selectedTaskID), updatedtask);
             /*
                 Status information to the user
              */
@@ -115,55 +126,42 @@ public class UpdateTask extends AppCompatActivity {
     /*
         Getters & Setters
      */
-
     public Button getUpdate() {
         return update;
     }
-
     public void setUpdate(Button update) {
         this.update = update;
     }
-
     public void setTitle(EditText title) {
         this.title = title;
     }
-
     public EditText getDescription() {
         return description;
     }
-
     public void setDescription(EditText description) {
         this.description = description;
     }
-
     public Button getUpdateDate() {
         return updateDate;
     }
-
     public void setUpdateDate(Button updateDate) {
         this.updateDate = updateDate;
     }
-
     public EditText getDate() {
         return date;
     }
-
     public void setDate(EditText date) {
         this.date = date;
     }
-
     public Spinner getCategorySpinner() {
         return categorySpinner;
     }
-
     public void setCategorySpinner(Spinner categorySpinner) {
         this.categorySpinner = categorySpinner;
     }
-
     public void setIsDone(CheckBox isDone) {
         this.isDone = isDone;
     }
-
     public CheckBox getIsDone() {
         return isDone;
     }

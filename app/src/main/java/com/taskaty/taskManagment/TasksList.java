@@ -48,6 +48,9 @@ public class TasksList extends AppCompatActivity{
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
             Task selectedTask = Tasks.getTasks().get(position);
+            /*
+                TODO I must make sure this is right
+             */
             Intent intent = new Intent(this, UpdateTask.class);
             intent.putExtra("selectedTaskID", selectedTask.getId());
             startActivity(intent);
@@ -67,15 +70,12 @@ public class TasksList extends AppCompatActivity{
     public void setAdd(ImageButton add) {
         this.add = add;
     }
-
     public ImageButton getAdd() {
         return add;
     }
-
     public void setTasks(ListView tasks) {
         this.tasksVeiw = tasks;
     }
-
     public ListView getTasks() {
         return tasksVeiw;
     }

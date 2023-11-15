@@ -38,7 +38,6 @@ public class Task {
         setDescription(description);
     }
 
-
     @NonNull
     @Override
     public String toString() {
@@ -56,47 +55,36 @@ public class Task {
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public Boolean getDone() {
         return isDone;
     }
-
     public void setDone(Boolean done) {
         isDone = done;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public String getCategory() {
         return category;
     }
-
     public void setCategory(String category) {
         this.category = category;
     }
-
     public GregorianCalendar getDueDate() {
         return dueDate;
     }
-
     public void setDueDate(GregorianCalendar date) {
         this.dueDate = date;
     }
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
