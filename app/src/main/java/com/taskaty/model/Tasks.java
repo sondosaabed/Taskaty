@@ -2,6 +2,7 @@ package com.taskaty.model;
 
 import android.content.SharedPreferences;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.GregorianCalendar;
 
 //import com.google.gson.Gson;
@@ -15,21 +16,12 @@ import java.util.GregorianCalendar;
         - Checking if tasks exists on the list
  */
 public class Tasks {
-    private static final ArrayList<Task> tasks = new ArrayList<>();
+    // I initialize Sample Tasks in the tasks list
+    static Task t1 = new Task("Smile to a Stranger","Today I will smile and make someone happy","",null, false);
+    static Task t2 = new Task("Submit Assignment 1","Your mobile course work","Study",new GregorianCalendar(2023,11,18), true);
+    private static final ArrayList<Task> tasks = new ArrayList<>(Arrays.asList(t1,t2));
     private SharedPreferences sharedPrefrences;
     private SharedPreferences.Editor editor;
-
-    public static void initializeSampleTasks(){
-        /*
-            In this method I initialize Sample Tasks in the tasks list
-         */
-
-        Task t1 = new Task("Smile to a Stranger","Today I will smile and make someone happy","",null);
-        Task t2 = new Task("Submit Assignment 1","Your mobile course work","Study",new GregorianCalendar(2023,11,18));
-        t2.setDone(true);
-        addTask(t1);
-        addTask(t2);
-    }
 
     /*
         Operations on the list
