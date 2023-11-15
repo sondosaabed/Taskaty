@@ -40,13 +40,31 @@ public class Task {
         setDone(isDone);
     }
 
+    public Task(int id, String title, String description, String category, GregorianCalendar dueDate, Boolean isDone) {
+        setTitle(title);
+        /*
+               Because these are all optional for the user
+               So I decided on the constructor, like to use one constructor instead of multi
+         */
+        if (category != null && !category.isEmpty()) {
+            setCategory(category);
+        }
+        if (description != null && !description.isEmpty()) {
+            setDescription(description);
+        }
+        if (dueDate != null) {
+            setDueDate(dueDate);
+        }
+        setDone(isDone);
+        setId(id);
+    }
     /*
         I Used these icons to indicate it's done or not for better User experience
      */
     @NonNull
     @Override
     public String toString() {
-        String title =getTitle();
+        String title =getTittle();
         if(isDone){
             return "✔ ~~~~~~~~" + title + "~~~~~~~";
         }else{
@@ -57,7 +75,7 @@ public class Task {
     /*
         Getters & Setters
     */
-    public String getTitle() {
+    public String getTittle() {
         return title;
     }
     public void setTitle(String title) {
