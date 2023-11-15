@@ -47,7 +47,7 @@ public class UpdateTask extends AppCompatActivity {
         setUpdateDate(findViewById(R.id.uodateDate));
 
         setTitle((EditText) findViewById(R.id.titleEditTextUpdate));
-        setDescription(findViewById(R.id.descriptionEditTextUpdate));
+        setDescriptionn(findViewById(R.id.descriptionEditTextUpdate));
         setDate(findViewById(R.id.dateEditTextUpdate));
         setCategorySpinner(findViewById(R.id.categorySpinnerUpdate));
         setIsDone(findViewById(R.id.isDone));
@@ -62,16 +62,17 @@ public class UpdateTask extends AppCompatActivity {
         /*
              In this method, When the usre wants to update a task it's previous values should be there
          */
-        Task taskToUpdate = Tasks.getTasks().get(Integer.parseInt(selectedTaskID));
+//        Task taskToUpdate = Tasks.getTasks().get(Integer.parseInt(selectedTaskID));
+        Task taskToUpdate = Tasks.getTasks().get(0);
 
-        String title = taskToUpdate.getTitle();
+        String title = taskToUpdate.getTittle();
         getTittle().setText(title);
 
         Boolean isDone = taskToUpdate.getDone();
         getIsDone().setSelected(isDone);
 
         String description = taskToUpdate.getDescription();
-        getDescription().setText(description);
+        getDescriptionn().setText(description);
 
         String category = taskToUpdate.getCategory();
         //getCategorySpinner();
@@ -130,12 +131,14 @@ public class UpdateTask extends AppCompatActivity {
             /*
                 TODO warning is alwyas false why
              */
-            Task updatedtask = new Task(getTitle().toString().trim(),
-                                        getDescription().toString().trim(),
+            Task updatedtask = new Task(getTittle().getText().toString().trim(),
+                                        getDescriptionn().getText().toString().trim(),
                                         getCategorySpinner().getSelectedItem().toString(),
                                         date, isDone);
 
-            Tasks.updateTask(Integer.parseInt(selectedTaskID), updatedtask);
+//            Tasks.updateTask(Integer.parseInt(selectedTaskID), updatedtask);
+            Tasks.updateTask(0, updatedtask);
+
             /*
                 Status information to the user
              */
@@ -165,10 +168,10 @@ public class UpdateTask extends AppCompatActivity {
     public EditText getTittle() {
         return title;
     }
-    public EditText getDescription() {
+    public EditText getDescriptionn() {
         return description;
     }
-    public void setDescription(EditText description) {
+    public void setDescriptionn(EditText description) {
         this.description = description;
     }
     public Button getUpdateDate() {

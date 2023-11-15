@@ -17,8 +17,8 @@ import java.util.GregorianCalendar;
  */
 public class Tasks {
     // I initialize Sample Tasks in the tasks list
-    static Task t1 = new Task("Smile to a Stranger","Today I will smile and make someone happy","",null, false);
-    static Task t2 = new Task("Submit Assignment 1","Your mobile course work","Study",new GregorianCalendar(2023,11,18), true);
+    static Task t1 = new Task(0,"Smile to a Stranger","Today I will smile and make someone happy","",null, false);
+    static Task t2 = new Task(1,"Submit Assignment 1","Your mobile course work","Study",new GregorianCalendar(2023,11,18), true);
     private static final ArrayList<Task> tasks = new ArrayList<>(Arrays.asList(t1,t2));
     private SharedPreferences sharedPrefrences;
     private SharedPreferences.Editor editor;
