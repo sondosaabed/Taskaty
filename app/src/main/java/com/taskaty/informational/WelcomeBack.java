@@ -10,8 +10,8 @@ import com.taskaty.R;
 import com.taskaty.taskManagment.TasksList;
 
 /*
-    This is the starting activity of the mobile app, the user is able to
-    start
+    This is another starting activity of the mobile app,
+    Checking if it's not the first time of the user then welcome them back
  */
 public class WelcomeBack extends AppCompatActivity {
     /*

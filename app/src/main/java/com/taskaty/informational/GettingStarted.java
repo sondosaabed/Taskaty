@@ -57,6 +57,10 @@ public class GettingStarted extends AppCompatActivity {
     }
 
     private void handle_start(Button start) {
+        /*
+            When the start button is clicked show the main tasks list
+               It will contain sample task
+         */
         start.setOnClickListener(view -> {
             Intent intent = new Intent(this, TasksList.class);
             startActivity(intent);

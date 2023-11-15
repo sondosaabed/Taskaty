@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -22,6 +21,9 @@ import java.util.GregorianCalendar;
     I have created this activity to enable the user to update an existing task, for example to set it as done
  */
 public class UpdateTask extends AppCompatActivity {
+    /*
+        Attributes
+    */
     Button update;
     EditText title;
     EditText description;
@@ -80,20 +82,22 @@ public class UpdateTask extends AppCompatActivity {
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(
                     UpdateTask.this,
-                    new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                            getDate().setText(dayOfMonth + "-" + (month + 1) + "-" + year);
-                        }
+                    /*
+                        replaced by lamda suggested by android studio
+                     */
+                    (view1, year1, month1, dayOfMonth) -> {
+                        String datestr = dayOfMonth + "-" + (month1 + 1) + "-" + year1 ;
+                        getDate().setText(datestr);
                     }
                     ,year, month, day);
             datePickerDialog.show();
         });
     }
+
     private void handle_update(Button update, String selectedTaskID){
         update.setOnClickListener(view->{
             /*
-            Handling the date as a string
+                Handling the date as a string
              */
             String dateStr = getDate().getText().toString().trim();
             String[] dateElments = dateStr.split("-");

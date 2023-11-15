@@ -22,6 +22,9 @@ import java.util.GregorianCalendar;
     I have created this activity to enable the user to add a new task to their list
  */
 public class AddNewTask extends AppCompatActivity {
+    /*
+        Attributes
+     */
     Button add;
     EditText title;
     EditText description;
@@ -66,17 +69,21 @@ public class AddNewTask extends AppCompatActivity {
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(
                     AddNewTask.this,
-                    new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                            getDate().setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+                    /*
+                        replaced by lamda suggested by android studio
+                     */
+                    (view1, year1, month1, dayOfMonth) -> {
+                        String datestr = dayOfMonth + "-" + (month1 + 1) + "-" + year1 ;
+                        getDate().setText(datestr);
                         }
-                    }
                     ,year, month, day);
             datePickerDialog.show();
         });
     }
     private void handle_add(Button add){
+        /*
+            When Clicked add all the values and create a new object Task to the Tasks list
+         */
         add.setOnClickListener(view->{
             String title = gettitle().getText().toString().trim();
             String description = getDescription().getText().toString().trim();
@@ -101,7 +108,7 @@ public class AddNewTask extends AppCompatActivity {
                 intent1.putExtra("status", "added");
                 startActivity(intent1);
             }else{
-
+                // At least the title should be added
             }
         });
     }

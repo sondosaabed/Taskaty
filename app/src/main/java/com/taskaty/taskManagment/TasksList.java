@@ -13,9 +13,12 @@ import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
 /*
-    This is the main app activity
+    This is the main app activity that shows the tasks list
  */
 public class TasksList extends AppCompatActivity{
+    /*
+        Attributes
+    */
     ImageButton add;
     ListView tasksVeiw;
 
@@ -32,8 +35,7 @@ public class TasksList extends AppCompatActivity{
         setAdd(findViewById(R.id.add));
         setTasks(findViewById(R.id.taskListView));
         Tasks.initializeSampleTasks();
-        ArrayAdapter<Task> listAdapter = new ArrayAdapter<Task>(this,
-                android.R.layout.simple_list_item_1,
+        ArrayAdapter<Task> listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 Tasks.getTasks());
 
         getTasks().setAdapter(listAdapter);
@@ -58,6 +60,9 @@ public class TasksList extends AppCompatActivity{
     }
 
     private void handle_add(ImageButton add) {
+        /*
+            When the user clicks Add, the user is able to fill a form and add a new one
+         */
         add.setOnClickListener(veiw->{
             Intent intent = new Intent(this, AddNewTask.class);
             startActivity(intent);

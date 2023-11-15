@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 
 
 /*
-    In this class I use the ArrayList Data Structure to save the tasks
+    In this Wrapper class I use the ArrayList Data Structure to save the tasks
     Diffrent operations are done on this datastructure:
         - Adding a new task
         - Updating an existing task
@@ -24,7 +24,7 @@ public class Tasks {
             In this method I initialize Sample Tasks in the tasks list
          */
 
-        Task t1 = new Task("Smile to a Stranger","Today I will smile and make someone happy");
+        Task t1 = new Task("Smile to a Stranger","Today I will smile and make someone happy","",null);
         Task t2 = new Task("Submit Assignment 1","Your mobile course work","Study",new GregorianCalendar(2023,11,18));
         t2.setDone(true);
         addTask(t1);
@@ -36,12 +36,14 @@ public class Tasks {
      */
     public static void addTask(Task task){
         getTasks().add(task);
-        //When I add a new Task I set the ID of the object task as their index in the arrayList
+        //When I add a new Task I set the ID of the object Task as their index in the arrayList
         task.setId(getTasks().indexOf(task));
     }
 
     public static void updateTask(int oldID, Task updatedTask) {
         getTasks().set(oldID, updatedTask);
+        // Becuase it's ID is suppose to stay the same, just makeing sure I thinks it does
+        updatedTask.setId(getTasks().indexOf(updatedTask));
     }
 
     /*

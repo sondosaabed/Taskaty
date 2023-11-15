@@ -20,24 +20,28 @@ public class Task {
     private GregorianCalendar dueDate = new GregorianCalendar(); // They can set the due date of the task
 
     /*
-        Constructors
+        Constructor
      */
     public Task(String title, String description, String category, GregorianCalendar dueDate) {
         setTitle(title);
-        setDueDate(dueDate);
+        /*
+               Because these are all optional for the user
+               So I decided on the constructor, like to use one constructor instead of multi
+         */
         if (category != null && !category.isEmpty()) {
             setCategory(category);
         }
         if (description != null && !description.isEmpty()) {
             setDescription(description);
         }
+        if (dueDate != null) {
+            setDueDate(dueDate);
+        }
     }
 
-    public Task(String title, String description) {
-        setTitle(title);
-        setDescription(description);
-    }
-
+    /*
+        I Used these icons to indicate it's done or not for better User experience
+     */
     @NonNull
     @Override
     public String toString() {
