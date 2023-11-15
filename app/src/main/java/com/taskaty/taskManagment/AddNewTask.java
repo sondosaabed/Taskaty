@@ -91,13 +91,21 @@ public class AddNewTask extends AppCompatActivity {
             Handling the date as a string
              */
             String dateStr = getDate().getText().toString().trim();
-            String[] dateElments = dateStr.split("-");
+            int year;
+            int month;
+            int day;
+            GregorianCalendar date;
 
-            int year= Integer.parseInt(dateElments[2]);
-            int month = Integer.parseInt(dateElments[1]);
-            int day = Integer.parseInt(dateElments[0]);
+            if(!dateStr.isEmpty()){
+                String[] dateElements = dateStr.split("-");
+                year= Integer.parseInt(dateElements[2]);
+                month = Integer.parseInt(dateElements[1]);
+                day = Integer.parseInt(dateElements[0]);
+                date = new GregorianCalendar(day,month,year);
+            }else{
+                date = null;
+            }
 
-            GregorianCalendar date = new GregorianCalendar(day,month,year);
             String category = getCategorySpinner().getSelectedItem().toString().trim();
 
             if(!title.isEmpty()){
