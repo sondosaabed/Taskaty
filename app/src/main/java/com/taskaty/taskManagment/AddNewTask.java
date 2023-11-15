@@ -3,9 +3,11 @@ package com.taskaty.taskManagment;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +32,7 @@ public class AddNewTask extends AppCompatActivity {
     Button pickDate;
     EditText date;
     Spinner categorySpinner;
+    TextView warning;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class AddNewTask extends AppCompatActivity {
         setDate(findViewById(R.id.dateEditText));
         setCategorySpinner(findViewById(R.id.categorySpinner));
         setPickDate(findViewById(R.id.pickDate));
+        setWarning(findViewById(R.id.warning));
 
         handle_date(getPickDate());
         handle_add(getAdd());
@@ -116,6 +120,7 @@ public class AddNewTask extends AppCompatActivity {
                 startActivity(intent1);
             }else{
                 // At least the title should be added
+                getWarning().setVisibility(View.VISIBLE);
             }
         });
     }
@@ -155,5 +160,11 @@ public class AddNewTask extends AppCompatActivity {
     }
     public void setPickDate(Button pickDate) {
         this.pickDate = pickDate;
+    }
+    public TextView getWarning() {
+        return warning;
+    }
+    public void setWarning(TextView warning) {
+        this.warning = warning;
     }
 }

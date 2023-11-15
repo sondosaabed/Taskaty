@@ -7,6 +7,25 @@
     android:foregroundGravity="center">
 
 
+    <TextView
+        android:id="@+id/warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mirza"
+        android:foregroundGravity="center"
+        android:labelFor="@id/titleEditText"
+        android:text="@string/warning"
+        android:textColor="#E91E63"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212" />
+
     <EditText
         android:id="@+id/descriptionEditText"
         android:layout_width="332dp"
@@ -77,7 +96,7 @@
         android:fontFamily="@font/mirza"
         android:foreground="@color/redish"
         android:foregroundGravity="center"
-        android:text="Pick Date"
+        android:text="@string/pick_date"
         android:textSize="18sp"
         android:textStyle="bold"
         app:icon="@android:drawable/ic_menu_my_calendar"

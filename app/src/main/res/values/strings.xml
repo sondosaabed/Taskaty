@@ -32,6 +32,8 @@
     <string name="newTask">New Task</string>
     <string name="title">Title</string>
     <string name="create">Create a new Task</string>
+    <string name="warning">Enter a title to proceed</string>
+    <string name="pick_date">Pick Date</string>
 
     <!--    Added Task Activity-->
     <string name="added">Your New Task is Added!</string>
