@@ -69,7 +69,7 @@ public class UpdateTask extends AppCompatActivity {
         getTittle().setText(title);
 
         Boolean isDone = taskToUpdate.getDone();
-        getIsDone().setSelected(isDone);
+        getIsDone().setChecked(isDone);
 
         String description = taskToUpdate.getDescription();
         getDescriptionn().setText(description);
