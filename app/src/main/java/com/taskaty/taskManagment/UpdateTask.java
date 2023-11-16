@@ -2,14 +2,12 @@ package com.taskaty.taskManagment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
@@ -17,7 +15,6 @@ import com.taskaty.informational.StatusInform;
 import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -39,12 +36,14 @@ public class UpdateTask extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String selectedTaskID = getIntent().getStringExtra("selectedTaskID");
+        int selectedTaskID = getIntent().getIntExtra("selectedTaskID", 0);
         initialize(selectedTaskID);
     }
 
-    private void initialize(String selectedTaskID) {
-        getSupportActionBar().hide();
+    private void initialize(int selectedTaskID) {
+        if(getSupportActionBar()!=null)
+            getSupportActionBar().hide();
+
         setContentView(R.layout.update_task);
 
         setUpdate(findViewById(R.id.updateTaskButton));
@@ -59,18 +58,14 @@ public class UpdateTask extends AppCompatActivity {
         handle_date(getUpdateDate());
         handle_update(getUpdate(), selectedTaskID);
 
-        if (Build.VERSION.SDK_INT >= 34) {
-            setValuesToBeUpdated(selectedTaskID);
-        }
+        setValuesToBeUpdated(selectedTaskID);
     }
 
-    @RequiresApi(api = 34)
-    private void setValuesToBeUpdated(String selectedTaskID) {
+    private void setValuesToBeUpdated(int selectedTaskID) {
         /*
              In this method, When the usre wants to update a task it's previous values should be there
          */
-//        Task taskToUpdate = Tasks.getTasks().get(Integer.parseInt(selectedTaskID));
-        Task taskToUpdate = Tasks.getTasks().get(0);
+        Task taskToUpdate = Tasks.getTasks().get(selectedTaskID);
 
         String title = taskToUpdate.getTittle();
         getTittle().setText(title);
@@ -81,17 +76,20 @@ public class UpdateTask extends AppCompatActivity {
         String description = taskToUpdate.getDescription();
         getDescriptionn().setText(description);
 
+        GregorianCalendar date = taskToUpdate.getDueDate();
+        String datStr ="";
+
+        if(date != null){
+            datStr = date.get(GregorianCalendar.DAY_OF_MONTH) +"-"+ date.get(GregorianCalendar.MONTH)+"-"+date.get(GregorianCalendar.YEAR);
+        }
+
+        getDate().setText(datStr);
         /*
             TODO this is worked for >34 api so
          */
-        String category = taskToUpdate.getCategory();
-        int index = Arrays.asList(getResources().getStringArray(R.array.category_array)).indexOf(category);
-        getCategorySpinner().setSelection(index);
-
-        GregorianCalendar date = taskToUpdate.getDueDate();
-        String datStr = date.get(GregorianCalendar.DAY_OF_MONTH) +"-"+ date.get(GregorianCalendar.MONTH)+"-"+date.get(GregorianCalendar.YEAR);
-
-        getDate().setText(datStr);
+//        String category = taskToUpdate.getCategory();
+//        int index = Arrays.asList(getResources().getStringArray(R.array.category_array)).indexOf(category);
+//        getCategorySpinner().setSelection(index);
     }
 
     /*
@@ -122,42 +120,47 @@ public class UpdateTask extends AppCompatActivity {
         });
     }
 
-    private void handle_update(Button update, String selectedTaskID){
+    private void handle_update(Button update, int selectedTaskID){
         update.setOnClickListener(view->{
             /*
                 Handling the date as a string
              */
             String dateStr = getDate().getText().toString().trim();
-            String[] dateElments = dateStr.split("-");
+            GregorianCalendar date;
 
-            int year= Integer.parseInt(dateElments[2]);
-            int month = Integer.parseInt(dateElments[1]);
-            int day = Integer.parseInt(dateElments[0]);
+            if(!dateStr.isEmpty()){
+                String[] dateElments = dateStr.split("-");
 
-            GregorianCalendar date = new GregorianCalendar(day,month,year);
+                int year= Integer.parseInt(dateElments[2]);
+                int month = Integer.parseInt(dateElments[1]);
+                int day = Integer.parseInt(dateElments[0]);
+
+                date = new GregorianCalendar(day,month,year);
+            }
+            else{
+                date = null;
+            }
+
             Boolean isDone = getIsDone().isChecked();
-            /*
-                TODO warning is alwyas false why
-             */
+
             Task updatedtask = new Task(getTittle().getText().toString().trim(),
                                         getDescriptionn().getText().toString().trim(),
                                         getCategorySpinner().getSelectedItem().toString(),
                                         date, isDone);
 
-//            Tasks.updateTask(Integer.parseInt(selectedTaskID), updatedtask);
-            Tasks.updateTask(0, updatedtask);
-
+            Tasks.updateTask(selectedTaskID, updatedtask);
             /*
                 Status information to the user
              */
-            Intent intent = null;
+            String status;
+
             if(isDone){
-                intent = new Intent(this, StatusInform.class);
-                intent.putExtra("status", "completed");
-            } else if (!isDone) {
-                intent = new Intent(this, StatusInform.class);
-                intent.putExtra("status", "updated");
+                status= "completed";
+            } else {
+                status = "updated";
             }
+            Intent intent = new Intent(this, StatusInform.class);
+            intent.putExtra("status", status);
             startActivity(intent);
         });
     }

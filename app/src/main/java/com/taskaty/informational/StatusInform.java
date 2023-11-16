@@ -27,7 +27,8 @@ public class StatusInform extends AppCompatActivity {
     }
 
     private void initialize(@NonNull String status) {
-        getSupportActionBar().hide();
+        if(getSupportActionBar()!=null)
+            getSupportActionBar().hide();
 
         // Based on the status the status layout will be shown
         /*

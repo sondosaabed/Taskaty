@@ -50,7 +50,8 @@ public class GettingStarted extends AppCompatActivity {
     }
 
     private void initialize() {
-        getSupportActionBar().hide();
+        if(getSupportActionBar()!=null)
+            getSupportActionBar().hide();
         setContentView(R.layout.getting_started);
         setStart(findViewById(R.id.start));
         handle_start(getStart());
@@ -59,7 +60,7 @@ public class GettingStarted extends AppCompatActivity {
     private void handle_start(Button start) {
         /*
             When the start button is clicked show the main tasks list
-               It will contain sample task
+               It will contain two sample task I added
          */
         start.setOnClickListener(view -> {
             Intent intent = new Intent(this, TasksList.class);

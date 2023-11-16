@@ -29,7 +29,8 @@ public class TasksList extends AppCompatActivity{
     }
 
     private void initialize() {
-        getSupportActionBar().hide();
+        if(getSupportActionBar()!=null)
+            getSupportActionBar().hide();
         setContentView(R.layout.tasks_list);
 
         setAdd(findViewById(R.id.add));
@@ -46,15 +47,11 @@ public class TasksList extends AppCompatActivity{
 
     private void handle_taskClick(ListView tasks) {
         /*
-        When a user clicks on a list item they are allowed to edit it
+            When a user clicks on a list item they are allowed to edit it
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
-            Task selectedTask = Tasks.getTasks().get(position);
-            /*
-                TODO I must make sure this is right
-             */
             Intent intent = new Intent(this, UpdateTask.class);
-            intent.putExtra("selectedTaskID", selectedTask.getId());
+            intent.putExtra("selectedTaskID", position);
             startActivity(intent);
         });
     }
