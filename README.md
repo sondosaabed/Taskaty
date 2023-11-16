@@ -10,7 +10,8 @@ A complete Android app that can assist users in managing their tasks, realistic 
 
 
 ## Resources
-- [Undraw for illustrations](https://undraw.co/search) 
+- [Undraw for illustrations](https://undraw.co/search)
+- [SYMBL for symbols](https://symbl.cc/en/)
 - [Behance UI/UX 1](https://www.behance.net/gallery/182827809/Taskin-(Task-Management)?tracking_source=search_projects|task+management+app)
 - [Behance UI/UX 2](https://www.behance.net/gallery/182828143/Task-Management-Mobile-App?tracking_source=search_projects|task+management+app)
 - [Stackoverflow](https://stackoverflow.com/questions/30216233/how-to-hide-app-name-from-title-bar-in-android)
