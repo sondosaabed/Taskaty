@@ -65,7 +65,7 @@ public class UpdateTask extends AppCompatActivity {
         /*
              In this method, When the usre wants to update a task it's previous values should be there
          */
-        Task taskToUpdate = Tasks.getTasks().get(selectedTaskID);
+        Task taskToUpdate = Tasks.getTaskaty().get(selectedTaskID);
 
         String title = taskToUpdate.getTittle();
         getTittle().setText(title);

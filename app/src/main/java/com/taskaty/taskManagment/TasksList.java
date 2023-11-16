@@ -9,8 +9,8 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
+import com.taskaty.model.Preferences;
 import com.taskaty.model.Task;
-import com.taskaty.model.Tasks;
 
 /*
     This is the main app activity that shows the tasks list
@@ -38,8 +38,7 @@ public class TasksList extends AppCompatActivity{
 
         ArrayAdapter<Task> listAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
-                Tasks.getTasks());
-
+                Preferences.loadTasks());
         getTasks().setAdapter(listAdapter);
 
         handle_add(getAdd());
