@@ -82,14 +82,18 @@ public class UpdateTask extends AppCompatActivity {
         if(date != null){
             datStr = date.get(GregorianCalendar.DAY_OF_MONTH) +"-"+ date.get(GregorianCalendar.MONTH)+"-"+date.get(GregorianCalendar.YEAR);
         }
-
         getDate().setText(datStr);
-        /*
-            TODO this is worked for >34 api so
-         */
-//        String category = taskToUpdate.getCategory();
-//        int index = Arrays.asList(getResources().getStringArray(R.array.category_array)).indexOf(category);
-//        getCategorySpinner().setSelection(index);
+
+        String category = taskToUpdate.getCategory();
+        // I tried to use asList it only worked for api 34 so I had to iterate through an array
+        String[] categories  = getResources().getStringArray(R.array.category_array);
+        int index =0;
+        for (int i = 0; i< categories.length; i++) {
+            if(categories[i].equals(category)){
+                index = i;
+            }
+        }
+        getCategorySpinner().setSelection(index);
     }
 
     /*
