@@ -2,18 +2,22 @@ package com.taskaty.taskManagment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
 import com.taskaty.informational.StatusInform;
 import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
+
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -55,9 +59,12 @@ public class UpdateTask extends AppCompatActivity {
         handle_date(getUpdateDate());
         handle_update(getUpdate(), selectedTaskID);
 
-        setValuesToBeUpdated(selectedTaskID);
+        if (Build.VERSION.SDK_INT >= 34) {
+            setValuesToBeUpdated(selectedTaskID);
+        }
     }
 
+    @RequiresApi(api = 34)
     private void setValuesToBeUpdated(String selectedTaskID) {
         /*
              In this method, When the usre wants to update a task it's previous values should be there
@@ -74,11 +81,12 @@ public class UpdateTask extends AppCompatActivity {
         String description = taskToUpdate.getDescription();
         getDescriptionn().setText(description);
 
-        String category = taskToUpdate.getCategory();
-        //getCategorySpinner();
         /*
-            TODO handle this category value how can I get it
+            TODO this is worked for >34 api so
          */
+        String category = taskToUpdate.getCategory();
+        int index = Arrays.asList(getResources().getStringArray(R.array.category_array)).indexOf(category);
+        getCategorySpinner().setSelection(index);
 
         GregorianCalendar date = taskToUpdate.getDueDate();
         String datStr = date.get(GregorianCalendar.DAY_OF_MONTH) +"-"+ date.get(GregorianCalendar.MONTH)+"-"+date.get(GregorianCalendar.YEAR);
