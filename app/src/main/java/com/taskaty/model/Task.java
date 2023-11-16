@@ -66,9 +66,9 @@ public class Task {
     public String toString() {
         String title =getTittle();
         if(isDone){
-            return "✔ ~~~~~~~~" + title + "~~~~~~~";
+            return "✔   " + title ;
         }else{
-            return "▢ " + title;
+            return "⊡   " + title;
         }
     }
 
