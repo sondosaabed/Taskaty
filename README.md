@@ -15,6 +15,7 @@ A complete Android app that can assist users in managing their tasks, realistic 
 - [Behance UI/UX 2](https://www.behance.net/gallery/182828143/Task-Management-Mobile-App?tracking_source=search_projects|task+management+app)
 - [Stackoverflow](https://stackoverflow.com/questions/30216233/how-to-hide-app-name-from-title-bar-in-android)
 - [Stackoverflow 1](https://stackoverflow.com/questions/10532907/android-retrieve-string-array-from-resources)
+- [Stackoverflow 2](https://stackoverflow.com/questions/4636141/determine-if-android-app-is-being-used-for-the-first-time)
 - [Previous project I made](https://github.com/sondosaabed/Tasks-list-Managment-System/tree/main)
 - [Date Picker](https://www.geeksforgeeks.org/datepicker-in-android/)
 - [Caffe Menu Project](https://github.com/szainbzu/CaffeeMenu/tree/master)
