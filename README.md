@@ -6,7 +6,7 @@ A complete Android app that can assist users in managing their tasks, realistic 
 
 <div align=center>
 
-  https://github.com/sondosaabed/Taskaty/assets/65151701/b88233de-1e20-418c-8f2f-15abd0126640
+https://github.com/sondosaabed/Taskaty/assets/65151701/5e3c82e4-9955-45a7-8580-c59dc1f7ae19
 
 </div>
 
