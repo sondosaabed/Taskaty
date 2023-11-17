@@ -64,14 +64,10 @@ public class Preferences {
         editor.apply();
     }
 
-    private static void setupSharedPrefs(Context context) {
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        editor = preferences.edit();
-    }
-
     public static SharedPreferences getPreferences(Context context) {
         if (preferences == null) {
-            setupSharedPrefs(context);
+            preferences = PreferenceManager.getDefaultSharedPreferences(context);
+            editor = preferences.edit();
         }
         return preferences;
     }
