@@ -2,8 +2,7 @@ package com.taskaty.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-
+import androidx.preference.PreferenceManager;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,9 +52,6 @@ public class Preferences {
     }
 
     private static void setupSharedPrefs(Context context) {
-        /*
-           TODO this method is depricated
-         */
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         editor = preferences.edit();
     }
