@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.GregorianCalendar;
+
 /*
     I have created this class to ne used as a Prefrences opearions manager
     I use it to get shared prefrences and save and load tasks
@@ -15,6 +17,9 @@ public class Preferences {
     /*
         Attriutes
      */
+    // I initialize Sample Tasks in the tasks list
+    static Task t1 = new Task(0,"Smile to a Stranger","Today I will smile and make someone happy","",null, false);
+    static Task t2 = new Task(1,"Submit Assignment 1","Your mobile course work","Study",new GregorianCalendar(2023,11,18), true);
     private static final String DATA = "DATA";
     private static final String FIRST_TIME = "is_first_time";
     private static SharedPreferences preferences;
@@ -35,10 +40,18 @@ public class Preferences {
         editor.apply();
     }
 
+    public static ArrayList<Task> initializeTaskatySample(){
+        return new ArrayList<>(Arrays.asList(t1, t2));
+    }
+
     public static ArrayList<Task> loadTasks() {
         Gson gson = new Gson();
         String str = preferences.getString(DATA, "");
-        return gson.fromJson(str, new TypeToken<ArrayList<Task>>() {}.getType());
+        Task[] tasks = gson.fromJson(str, Task[].class);
+        if(tasks != null){
+            return new ArrayList<>(Arrays.asList(tasks));
+        }
+        return initializeTaskatySample();
     }
 
     /*
