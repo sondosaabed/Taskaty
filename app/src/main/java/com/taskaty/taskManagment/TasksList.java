@@ -50,7 +50,7 @@ public class TasksList extends AppCompatActivity{
             When a user clicks on a list item they are allowed to edit it
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
-            Intent intent = new Intent(this, UpdateTask.class);
+            Intent intent = new Intent(this, EditTask.class);
             intent.putExtra("selectedTaskID", position);
             startActivity(intent);
         });

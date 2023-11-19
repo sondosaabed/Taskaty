@@ -7,6 +7,7 @@ import java.util.ArrayList;
     Diffrent operations are done on this datastructure:
         - Adding a new task
         - Updating an existing task
+        - Remove an existing task on the list
         - Checking if tasks exists on the list
         - save the task after each modification
  */
@@ -25,6 +26,11 @@ public class Tasks {
     public static void updateTask(int oldID, Task updatedTask) {
         updatedTask.setId(oldID); // Becuase it's ID is suppose to stay the same
         getTaskaty().set(oldID, updatedTask);
+        Preferences.saveTaskaty(getTaskaty());
+    }
+
+    public static void deleteTask(int selectedTaskID) {
+        getTaskaty().remove(selectedTaskID);
         Preferences.saveTaskaty(getTaskaty());
     }
 

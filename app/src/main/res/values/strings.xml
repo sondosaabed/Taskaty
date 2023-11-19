@@ -40,10 +40,10 @@
     <string name="back_to_life">Hop Back to Work!</string>
 
     <!--    Update Task Activity -->
-    <string name="updateTask">Update Task</string>
-    <string name="update">Update Task</string>
+    <string name="updateTask">Edit Task</string>
+    <string name="update">Edit Task</string>
     <string name="done">Done</string>
-    <string name="update_date">Update Date</string>
+    <string name="update_date">Edit Date</string>
 
     <!--    Completed Task Activity -->
     <string name="completed">Your Task is Completed!</string>
@@ -51,4 +51,6 @@
 
     <!--    Updated Task Activity -->
     <string name="updated">Your Task is Updated!</string>
+    <!--    Deleted Task Activity -->
+    <string name="deleted">Your Task is Deleted!</string>
 </resources>

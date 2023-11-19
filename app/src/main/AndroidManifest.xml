@@ -26,7 +26,7 @@
         <!--    TaskMangamnet package    -->
         <activity android:name="com.taskaty.taskManagment.TasksList" android:exported="false"/>
         <activity android:name="com.taskaty.taskManagment.AddNewTask" android:exported="true"/>
-        <activity android:name="com.taskaty.taskManagment.UpdateTask" android:exported="true"></activity>
+        <activity android:name="com.taskaty.taskManagment.EditTask" android:exported="true"/>
 
         <meta-data
             android:name="preloaded_fonts"

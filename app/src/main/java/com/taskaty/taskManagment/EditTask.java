@@ -21,11 +21,12 @@ import java.util.GregorianCalendar;
 /*
     I have created this activity to enable the user to update an existing task, for example to set it as done
  */
-public class UpdateTask extends AppCompatActivity {
+public class EditTask extends AppCompatActivity {
     /*
         Attributes
     */
     Button update;
+    Button delete;
     EditText title;
     EditText description;
     Button updateDate;
@@ -44,7 +45,7 @@ public class UpdateTask extends AppCompatActivity {
         if(getSupportActionBar()!=null)
             getSupportActionBar().hide();
 
-        setContentView(R.layout.update_task);
+        setContentView(R.layout.edit_task);
 
         setUpdate(findViewById(R.id.updateTaskButton));
         setUpdateDate(findViewById(R.id.uodateDate));
@@ -54,11 +55,23 @@ public class UpdateTask extends AppCompatActivity {
         setDate(findViewById(R.id.dateEditTextUpdate));
         setCategorySpinner(findViewById(R.id.categorySpinnerUpdate));
         setIsDone(findViewById(R.id.isDone));
+        setDelete(findViewById(R.id.delete));
 
         handle_date(getUpdateDate());
         handle_update(getUpdate(), selectedTaskID);
+        handle_delete(getDelete(), selectedTaskID);
 
         setValuesToBeUpdated(selectedTaskID);
+    }
+
+    private void handle_delete(Button delete, int selectedTaskID) {
+        delete.setOnClickListener(veiw->{
+            Tasks.deleteTask(selectedTaskID);
+
+            Intent intent = new Intent(this, StatusInform.class);
+            intent.putExtra("status", "deleted");
+            startActivity(intent);
+        });
     }
 
     private void setValuesToBeUpdated(int selectedTaskID) {
@@ -111,7 +124,7 @@ public class UpdateTask extends AppCompatActivity {
             int day = c.get(Calendar.DAY_OF_MONTH);
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(
-                    UpdateTask.this,
+                    EditTask.this,
                     /*
                         replaced by lamda suggested by android studio
                      */
@@ -212,5 +225,11 @@ public class UpdateTask extends AppCompatActivity {
     }
     public CheckBox getIsDone() {
         return isDone;
+    }
+    public Button getDelete() {
+        return delete;
+    }
+    public void setDelete(Button delete) {
+        this.delete = delete;
     }
 }
