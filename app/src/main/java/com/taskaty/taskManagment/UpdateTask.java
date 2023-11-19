@@ -26,6 +26,7 @@ public class UpdateTask extends AppCompatActivity {
         Attributes
     */
     Button update;
+    Button delete;
     EditText title;
     EditText description;
     Button updateDate;
@@ -54,11 +55,23 @@ public class UpdateTask extends AppCompatActivity {
         setDate(findViewById(R.id.dateEditTextUpdate));
         setCategorySpinner(findViewById(R.id.categorySpinnerUpdate));
         setIsDone(findViewById(R.id.isDone));
+        setDelete(findViewById(R.id.delete));
 
         handle_date(getUpdateDate());
         handle_update(getUpdate(), selectedTaskID);
+        handle_delete(getDelete(), selectedTaskID);
 
         setValuesToBeUpdated(selectedTaskID);
+    }
+
+    private void handle_delete(Button delete, int selectedTaskID) {
+        delete.setOnClickListener(veiw->{
+            Tasks.deleteTask(selectedTaskID);
+
+            Intent intent = new Intent(this, StatusInform.class);
+            intent.putExtra("status", "deleted");
+            startActivity(intent);
+        });
     }
 
     private void setValuesToBeUpdated(int selectedTaskID) {
@@ -212,5 +225,11 @@ public class UpdateTask extends AppCompatActivity {
     }
     public CheckBox getIsDone() {
         return isDone;
+    }
+    public Button getDelete() {
+        return delete;
+    }
+    public void setDelete(Button delete) {
+        this.delete = delete;
     }
 }

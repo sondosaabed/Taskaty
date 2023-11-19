@@ -114,6 +114,7 @@
         android:text="@string/update"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:icon="@android:drawable/ic_menu_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.299"

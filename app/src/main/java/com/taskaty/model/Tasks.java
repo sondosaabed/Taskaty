@@ -28,6 +28,11 @@ public class Tasks {
         Preferences.saveTaskaty(getTaskaty());
     }
 
+    public static void deleteTask(int selectedTaskID) {
+        getTaskaty().remove(selectedTaskID);
+        Preferences.saveTaskaty(getTaskaty());
+    }
+
     /*
         Getters & Setters
     */
