@@ -51,4 +51,6 @@
 
     <!--    Updated Task Activity -->
     <string name="updated">Your Task is Updated!</string>
+    <!--    Deleted Task Activity -->
+    <string name="deleted">Your Task is Deleted!</string>
 </resources>

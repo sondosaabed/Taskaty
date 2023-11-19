@@ -7,6 +7,7 @@ import java.util.ArrayList;
     Diffrent operations are done on this datastructure:
         - Adding a new task
         - Updating an existing task
+        - Remove an existing task on the list
         - Checking if tasks exists on the list
         - save the task after each modification
  */
