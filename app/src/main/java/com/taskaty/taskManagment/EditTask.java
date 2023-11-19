@@ -21,7 +21,7 @@ import java.util.GregorianCalendar;
 /*
     I have created this activity to enable the user to update an existing task, for example to set it as done
  */
-public class UpdateTask extends AppCompatActivity {
+public class EditTask extends AppCompatActivity {
     /*
         Attributes
     */
@@ -45,7 +45,7 @@ public class UpdateTask extends AppCompatActivity {
         if(getSupportActionBar()!=null)
             getSupportActionBar().hide();
 
-        setContentView(R.layout.update_task);
+        setContentView(R.layout.edit_task);
 
         setUpdate(findViewById(R.id.updateTaskButton));
         setUpdateDate(findViewById(R.id.uodateDate));
@@ -124,7 +124,7 @@ public class UpdateTask extends AppCompatActivity {
             int day = c.get(Calendar.DAY_OF_MONTH);
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(
-                    UpdateTask.this,
+                    EditTask.this,
                     /*
                         replaced by lamda suggested by android studio
                      */

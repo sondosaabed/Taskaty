@@ -39,7 +39,7 @@ public class StatusInform extends AppCompatActivity {
                 setContentView(R.layout.completed);
                 break;
             case "updated":
-                setContentView(R.layout.updated);
+                setContentView(R.layout.edited);
                 break;
             case "added":
                 setContentView(R.layout.added);
