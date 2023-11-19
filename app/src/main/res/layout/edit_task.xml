@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundGravity="center">
+    android:layout_gravity="center|center_horizontal|center_vertical"
+    android:foregroundGravity="center|center_horizontal"
+    app:layout_anchorGravity="center|center_vertical">
 
 
     <EditText
@@ -206,15 +208,15 @@
 
     <Button
         android:id="@+id/delete"
-        android:layout_width="54dp"
-        android:layout_height="55dp"
+        android:layout_width="62dp"
+        android:layout_height="54dp"
         android:foregroundGravity="center"
-        android:gravity="center"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:theme="@style/Theme.Taskaty"
         app:icon="@android:drawable/ic_menu_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.899" />

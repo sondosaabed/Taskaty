@@ -44,6 +44,9 @@ public class StatusInform extends AppCompatActivity {
             case "added":
                 setContentView(R.layout.added);
                 break;
+            case "deleted":
+                setContentView(R.layout.deleted);
+                break;
         }
         setBack(findViewById(R.id.backHome));
         handle_back(getBack());
