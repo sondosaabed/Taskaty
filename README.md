@@ -33,3 +33,4 @@ https://github.com/sondosaabed/Taskaty/assets/65151701/5e3c82e4-9955-45a7-8580-c
 - [Date Picker](https://www.geeksforgeeks.org/datepicker-in-android/)
 - [Caffe Menu Project](https://github.com/szainbzu/CaffeeMenu/tree/master)
 - [GSOn DEMo](https://github.com/szainbzu/GSONDemo1/tree/master)
+- [CRUD Functionality](https://appmaster.io/blog/crud-functionality-in-mobile-apps)
