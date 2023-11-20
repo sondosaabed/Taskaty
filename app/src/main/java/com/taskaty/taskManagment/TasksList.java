@@ -4,11 +4,13 @@ package com.taskaty.taskManagment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
+import com.taskaty.informational.StatusInform;
 import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
@@ -20,6 +22,7 @@ public class TasksList extends AppCompatActivity{
         Attributes
     */
     ImageButton add;
+    Button search;
     ListView tasksVeiw;
 
     @Override
@@ -35,6 +38,7 @@ public class TasksList extends AppCompatActivity{
 
         setAdd(findViewById(R.id.add));
         setTasks(findViewById(R.id.taskListView));
+        setSearch(findViewById(R.id.search));
 
         ArrayAdapter<Task> listAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
@@ -43,6 +47,21 @@ public class TasksList extends AppCompatActivity{
 
         handle_add(getAdd());
         handle_taskClick(getTasks());
+        handle_search(getSearch());
+    }
+
+    private void handle_search(Button search) {
+        /*
+            When a user searches for a task by it's name
+            - if it's not found the status inform of not found will be shown
+         */
+        search.setOnClickListener(veiw->{
+            if(true){
+                Intent intent = new Intent(this, StatusInform.class);
+                intent.putExtra("status", "not_found");
+                startActivity(intent);
+            }
+        });
     }
 
     private void handle_taskClick(ListView tasks) {
@@ -80,5 +99,11 @@ public class TasksList extends AppCompatActivity{
     }
     public ListView getTasks() {
         return tasksVeiw;
+    }
+    public Button getSearch() {
+        return search;
+    }
+    public void setSearch(Button search) {
+        this.search = search;
     }
 }
