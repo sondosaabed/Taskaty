@@ -45,18 +45,31 @@
 
     <ImageButton
         android:id="@+id/add"
-        android:layout_width="234dp"
-        android:layout_height="152dp"
+        android:layout_width="204dp"
+        android:layout_height="154dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/about_image_1"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/add" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="168dp"
+        android:layout_height="60dp"
+        android:text="@string/search"
+        app:icon="?android:attr/actionModeWebSearchDrawable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.938" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
