@@ -10,6 +10,12 @@ https://github.com/sondosaabed/Taskaty/assets/65151701/5e3c82e4-9955-45a7-8580-c
 
 </div>
 
+### Update on Edit Task (Enable Deleting)
+<div style="display:flex; justify-content:space-between;" align="center">
+  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/94e8e4d1-249b-41de-92a9-d9f95e639a9a" style="width:30%;">
+  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/8de74d8e-f936-4155-958b-592065b4bbe1" style="width:30%;">
+  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/cb06b5a6-819b-4ab3-8715-514f269bb0b8" style="width:30%;">
+</div>
 
 ## UI/UX
 - [Taskaty Mobile App UI on My behance](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
