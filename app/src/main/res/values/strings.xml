@@ -53,4 +53,7 @@
     <string name="updated">Your Task is Updated!</string>
     <!--    Deleted Task Activity -->
     <string name="deleted">Your Task is Deleted!</string>
+    <string name="search">Search</string>
+    <string name="not_found">Nothing was found...</string>
+
 </resources>

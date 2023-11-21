@@ -34,6 +34,17 @@ public class Tasks {
         Preferences.saveTaskaty(getTaskaty());
     }
 
+    public static int findByname(String name){
+        /*
+            if the index is not changed then no task is found
+            I think I want to search using keywords like if a task name contains keyword
+            will return it's index
+         */
+        int index = -1;
+
+        return index;
+    }
+
     /*
         Getters & Setters
     */
