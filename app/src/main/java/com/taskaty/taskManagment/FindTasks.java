@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
 import com.taskaty.informational.StatusInform;
+import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
+
+import java.util.ArrayList;
 
 /*
     I have created this activity to enable the user to search for existing tasks
@@ -51,15 +54,14 @@ public class FindTasks extends AppCompatActivity {
      */
     private void handle_serach(Button search) {
         search.setOnClickListener(vewi->{
-            if(Tasks.findByname("name")!=-1){
-                Intent intent = new Intent(this, StatusInform.class);
-                intent.putExtra("status", "not_found");
+            ArrayList<Task> foundtasks = Tasks.search(getKeyword().getText().toString(),
+                    getMonth().getSelectedItem().toString(),
+                    getCategorySpinner().getSelectedItem().toString());
+            if(foundtasks.size()!=0){
+                Intent intent = new Intent(this, FoundTasks.class);
                 startActivity(intent);
             }else{
-                /*
-                I either show a list or highlight the list
-                 */
-                Intent intent = new Intent(this, FoundTasks.class);
+                Intent intent = new Intent(this, StatusInform.class);
                 intent.putExtra("status", "not_found");
                 startActivity(intent);
             }

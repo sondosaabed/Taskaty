@@ -10,9 +10,10 @@ import java.util.ArrayList;
         - Remove an existing task on the list
         - Checking if tasks exists on the list
         - save the task after each modification
+        - Search by (keyword, month, category)
  */
 public class Tasks {
-    private static ArrayList<Task> tasks = Preferences.loadTasks();//= Preferences.loadTasks()
+    private static ArrayList<Task> tasks = Preferences.loadTasks();
     /*
         Operations on the list
      */
@@ -34,15 +35,31 @@ public class Tasks {
         Preferences.saveTaskaty(getTaskaty());
     }
 
-    public static int findByname(String name){
+    public static ArrayList<Task> search(String keyword, String month, String category){
         /*
-            if the index is not changed then no task is found
-            I think I want to search using keywords like if a task name contains keyword
-            will return it's index
+            I will search like when we use filters
+            - If task name contains a keyword
+            - Month Filter on the list
+            - Category Filter on the list
          */
-        int index = -1;
+        ArrayList<Task> foundtasks = new ArrayList<>();
+        ArrayList<Task> tasks = Tasks.getTaskaty();
 
-        return index;
+        if(keyword.trim().isEmpty() && category.equals("all") && month.equals("all")){
+            return tasks; // Because all of them
+        }
+
+        if(!category.equals("all") || !month.equals("all")){
+            for(int i = 0; i<tasks.size() ;i++){
+                if(tasks.get(i).getCategory().equals(category)){
+                    tasks.add(tasks.get(i)); // I add it to the found tasks
+                }
+            }
+        }else{
+
+        }
+
+        return foundtasks;
     }
 
     /*
