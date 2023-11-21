@@ -51,9 +51,42 @@
 
     <!--    Updated Task Activity -->
     <string name="updated">Your Task is Updated!</string>
+
     <!--    Deleted Task Activity -->
     <string name="deleted">Your Task is Deleted!</string>
-    <string name="search">Search</string>
+    <!--    Nothing was found Status inform-->
     <string name="not_found">Nothing was found...</string>
 
+    <!--    TaskList Activity -->
+    <string name="search">Search</string>
+
+    <!--    Search Activity -->
+    <string name="keyword">Keyword</string>
+    <string name="searchTitle">Find tasks</string>
+    <string name="month">Month</string>
+    <string-array name="months">
+        <item>All</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="category_array_search">
+        <item>All</item>
+        <item>None</item>
+        <item>Personal</item>
+        <item>Work</item>
+        <item>Study</item>
+        <item>To-buy</item>
+        <item>To-read</item>
+        <item>To-watch</item>
+    </string-array>
 </resources>

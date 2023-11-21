@@ -10,7 +10,6 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.taskaty.R;
-import com.taskaty.informational.StatusInform;
 import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
@@ -56,15 +55,8 @@ public class TasksList extends AppCompatActivity{
             - if it's not found the status inform of not found will be shown
          */
         search.setOnClickListener(veiw->{
-            if(Tasks.findByname("name")==-1){
-                Intent intent = new Intent(this, StatusInform.class);
-                intent.putExtra("status", "not_found");
-                startActivity(intent);
-            }else{
-                /*
-                I either show a list or highlight the list
-                 */
-            }
+            Intent intent = new Intent(this, FindTasks.class);
+            startActivity(intent);
         });
     }
 
