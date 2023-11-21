@@ -51,7 +51,7 @@ public class FindTasks extends AppCompatActivity {
      */
     private void handle_serach(Button search) {
         search.setOnClickListener(vewi->{
-            if(Tasks.findByname("name")==-1){
+            if(Tasks.findByname("name")!=-1){
                 Intent intent = new Intent(this, StatusInform.class);
                 intent.putExtra("status", "not_found");
                 startActivity(intent);
@@ -59,6 +59,9 @@ public class FindTasks extends AppCompatActivity {
                 /*
                 I either show a list or highlight the list
                  */
+                Intent intent = new Intent(this, FoundTasks.class);
+                intent.putExtra("status", "not_found");
+                startActivity(intent);
             }
         });
     }

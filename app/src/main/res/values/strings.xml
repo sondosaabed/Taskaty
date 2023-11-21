@@ -89,4 +89,9 @@
         <item>To-read</item>
         <item>To-watch</item>
     </string-array>
+
+    <!--    Search Results Found Activity -->
+    <string name="foundTitle">Found Tasks</string>
+    <string name="backMain">Back to main Tasks List</string>
+
 </resources>

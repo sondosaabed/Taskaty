@@ -28,6 +28,7 @@
         <activity android:name="com.taskaty.taskManagment.AddNewTask" android:exported="true"/>
         <activity android:name="com.taskaty.taskManagment.EditTask" android:exported="true"/>
         <activity android:name="com.taskaty.taskManagment.FindTasks" android:exported="false"/>
+        <activity android:name="com.taskaty.taskManagment.FoundTasks" android:exported="false"/>
 
         <meta-data
             android:name="preloaded_fonts"
