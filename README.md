@@ -3,6 +3,11 @@ Taskaty is your go-to simple task managmnet mobile app. Your tool for effortless
 A complete Android app that can assist users in managing their tasks, realistic and provides real service to users. 
 
 ## Demo
+- To be honset, I forgot about this repo being an assignmnet and I got really involved in making updates after the deadline!
+- This demo is the one that I submitted earlier but after submission I wanted to make CRUD functionality
+- Because when I learn new technology I usually do that to get familier
+- In the next section find a demo of the updated project. But you can also use this vedio for grading I guess.
+- Note: this app is functional but I still want to update on it (On delete 
 
 <div align=center>
 
@@ -11,6 +16,8 @@ https://github.com/sondosaabed/Taskaty/assets/65151701/5e3c82e4-9955-45a7-8580-c
 </div>
 
 ### For Full CRUD Functionalities (Read, Delete)
+
+
 <div style="display:flex; justify-content:space-between;" align="center">
   <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/94e8e4d1-249b-41de-92a9-d9f95e639a9a" style="width:20%;">
   <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/8de74d8e-f936-4155-958b-592065b4bbe1" style="width:20%;">
