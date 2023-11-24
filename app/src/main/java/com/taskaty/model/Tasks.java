@@ -1,5 +1,6 @@
 package com.taskaty.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -54,13 +55,15 @@ public class Tasks {
             - Category Filter on the list
          */
         ArrayList<Task> foundtasks = new ArrayList<>();
-        ArrayList<Task> tasks = getTaskaty();
+        ArrayList<Task> tasks = Tasks.getTaskaty();
 
         for(Task task: tasks){
             boolean containsKeyword = task.getTittle().contains(keyword.toLowerCase(Locale.ROOT));
             boolean inCategory = task.getCategory().equals(category) || category.equals("all");
-
-            if(containsKeyword && inCategory){
+            boolean inMonth = task.getDueDate().getMonth().equals(
+                    LocalDate.parse(month.toUpperCase(Locale.ROOT)))
+                    || month.equals("all");
+            if(containsKeyword && inCategory && inMonth){
                 foundtasks.add(task);
             }
         }
