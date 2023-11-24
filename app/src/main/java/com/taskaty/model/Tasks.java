@@ -31,7 +31,17 @@ public class Tasks {
     }
 
     public static void deleteTask(int selectedTaskID) {
+        /* Since the user could have removed an elemnt at any index of the arrayylist
+        * I need to update the following tasks ID's since I set their id (Object ID) to it's index */
+        // if the removed task is not the last elment in the arraylist then the ids has to be updated
         getTaskaty().remove(selectedTaskID);
+        getTaskaty().trimToSize();
+
+        if(selectedTaskID < getTaskaty().size()){
+            for(int i=getTaskaty().size()-1; i>=selectedTaskID; i--){
+                getTaskaty().get(i).setId(getTaskaty().get(i).getId()-1);
+            }
+        }
         Preferences.saveTaskaty(getTaskaty());
     }
 
