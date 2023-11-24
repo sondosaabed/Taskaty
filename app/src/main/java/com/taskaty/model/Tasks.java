@@ -1,6 +1,7 @@
 package com.taskaty.model;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /*
     In this Wrapper class I use the ArrayList Data Structure to save the tasks
@@ -53,22 +54,16 @@ public class Tasks {
             - Category Filter on the list
          */
         ArrayList<Task> foundtasks = new ArrayList<>();
-        ArrayList<Task> tasks = Tasks.getTaskaty();
+        ArrayList<Task> tasks = getTaskaty();
 
-        if(keyword.trim().isEmpty() && category.equals("all") && month.equals("all")){
-            return tasks; // Because all of them
-        }
+        for(Task task: tasks){
+            boolean containsKeyword = task.getTittle().contains(keyword.toLowerCase(Locale.ROOT));
+            boolean inCategory = task.getCategory().equals(category) || category.equals("all");
 
-        if(!category.equals("all") || !month.equals("all")){
-            for(int i = 0; i<tasks.size() ;i++){
-                if(tasks.get(i).getCategory().equals(category)){
-                    tasks.add(tasks.get(i)); // I add it to the found tasks
-                }
+            if(containsKeyword && inCategory){
+                foundtasks.add(task);
             }
-        }else{
-
         }
-
         return foundtasks;
     }
 

@@ -38,12 +38,14 @@ public class FoundTasks extends AppCompatActivity{
 
         setTasks(findViewById(R.id.foundListView));
         setBack(findViewById(R.id.backHome2));
-        ArrayList<Task> foundTasks = Tasks.getTaskaty();
 
-        //I will change this once I implement it on Tasks
+        ArrayList<Task> foundtasks = Tasks.search(getIntent().getStringExtra("keyword"),
+                getIntent().getStringExtra("month"),
+                getIntent().getStringExtra("category"));
+
         ArrayAdapter<Task> listAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
-                foundTasks);
+                foundtasks);
         getTasks().setAdapter(listAdapter);
 
         handle_back(getBack());

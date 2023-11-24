@@ -57,8 +57,12 @@ public class FindTasks extends AppCompatActivity {
             ArrayList<Task> foundtasks = Tasks.search(getKeyword().getText().toString(),
                     getMonth().getSelectedItem().toString(),
                     getCategorySpinner().getSelectedItem().toString());
+
             if(foundtasks.size()!=0){
                 Intent intent = new Intent(this, FoundTasks.class);
+                intent.putExtra("keyword",getKeyword().getText().toString());
+                intent.putExtra("month",getMonth().getSelectedItem().toString());
+                intent.putExtra("category",getCategorySpinner().getSelectedItem().toString());
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(this, StatusInform.class);
