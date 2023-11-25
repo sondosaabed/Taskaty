@@ -2,12 +2,10 @@
 Taskaty is your go-to simple task managmnet mobile app. Your tool for effortlessly organainzg tasks. 
 A complete Android app that can assist users in managing their tasks, realistic and provides real service to users. 
 
+## UI/UX
+- [Taskaty Mobile App UI on My behance](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
+
 ## Demo
-- To be honset, I forgot about this repo being an assignmnet and I got really involved in making updates after the deadline!
-- This demo is the one that I submitted earlier but after submission I wanted to make CRUD functionality
-- Because when I learn new technology I usually do that to get familier
-- In the next section find a demo of the updated project. But you can also use this vedio for grading I guess.
-- Note: this app is functional but I still want to update on it (On delete 
 
 <div align=center>
 
@@ -24,9 +22,6 @@ https://github.com/sondosaabed/Taskaty/assets/65151701/5e3c82e4-9955-45a7-8580-c
   <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/63b94003-3f57-47a5-acb3-a0ccfff079ee" style="width:20%;">
   <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/47eb1ab2-b57a-44c7-ad63-b0f135d46c5b" style="width:20%;">
 </div>
-
-## UI/UX
-- [Taskaty Mobile App UI on My behance](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
 
 ## Resources
 - [Undraw for illustrations](https://undraw.co/search)
