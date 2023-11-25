@@ -10,17 +10,6 @@ A complete Android app that can assist users in managing their tasks, realistic 
 <div align=center>
 
 https://github.com/sondosaabed/Taskaty/assets/65151701/5e3c82e4-9955-45a7-8580-c59dc1f7ae19
-
-</div>
-
-### For Full CRUD Functionalities (Read, Delete)
-
-
-<div style="display:flex; justify-content:space-between;" align="center">
-  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/94e8e4d1-249b-41de-92a9-d9f95e639a9a" style="width:20%;">
-  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/8de74d8e-f936-4155-958b-592065b4bbe1" style="width:20%;">
-  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/63b94003-3f57-47a5-acb3-a0ccfff079ee" style="width:20%;">
-  <img src="https://github.com/sondosaabed/Taskaty/assets/65151701/47eb1ab2-b57a-44c7-ad63-b0f135d46c5b" style="width:20%;">
 </div>
 
 ## Resources
