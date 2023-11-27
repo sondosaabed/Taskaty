@@ -15,8 +15,8 @@ import com.taskaty.informational.StatusInform;
 import com.taskaty.model.Task;
 import com.taskaty.model.Tasks;
 
+import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 /*
     I have created this activity to enable the user to update an existing task, for example to set it as done
@@ -89,11 +89,13 @@ public class EditTask extends AppCompatActivity {
         String description = taskToUpdate.getDescription();
         getDescriptionn().setText(description);
 
-        GregorianCalendar date = taskToUpdate.getDueDate();
+        LocalDate date = taskToUpdate.getDueDate();
         String datStr ="";
 
         if(date != null){
-            datStr = date.get(GregorianCalendar.DAY_OF_MONTH) +"-"+ date.get(GregorianCalendar.MONTH)+"-"+date.get(GregorianCalendar.YEAR);
+            datStr = date.getDayOfMonth() +"-" +
+                    date.getMonth() +"-"+
+                    date.getYear();
         }
         getDate().setText(datStr);
 
@@ -143,7 +145,7 @@ public class EditTask extends AppCompatActivity {
                 Handling the date as a string
              */
             String dateStr = getDate().getText().toString().trim();
-            GregorianCalendar date;
+            LocalDate date;
 
             if(!dateStr.isEmpty()){
                 String[] dateElments = dateStr.split("-");
@@ -152,7 +154,7 @@ public class EditTask extends AppCompatActivity {
                 int month = Integer.parseInt(dateElments[1]);
                 int day = Integer.parseInt(dateElments[0]);
 
-                date = new GregorianCalendar(day,month,year);
+                date = LocalDate.of(year, month,day);
             }
             else{
                 date = null;
