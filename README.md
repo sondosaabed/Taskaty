@@ -3,13 +3,18 @@ Taskaty is your go-to simple task managmnet mobile app. Your tool for effortless
 A complete Android app that can assist users in managing their tasks, realistic and provides real service to users. 
 
 ## Features:
+### CRUD Functionality
+Taskaty has CRUD (Create, Read, Update, Delete) functionality, to manage the tasks efficiently.
+
+#### Requirements 
 - <b>Task List:</b> User can view all due tasks. _(All tasks are persisted to local storage using Shared Preferences and GSON)_
 - <b>Create New Tasks:</b> Users can add new tasks to the list.
 - <b>Edit Tasks:</b> Users can edit any task. Including marking it as done.
 
-### Additional Features:
+#### Additional Features:
 - <b>Search Functionality:</b> Users can search for tasks using keywords, filter tasks by month, or categorize them.
 - <b>Remove Tasks:</b> Users can remove existing tasks.
+
     
 ## UI/UX
 - [Taskaty Mobile App UI on My behance](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
