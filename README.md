@@ -10,16 +10,13 @@ Taskaty has CRUD (Create, Read, Update, Delete) functionality, to manage the tas
 - <b>Task List:</b> User can view all due tasks. _(All tasks are persisted to local storage using Shared Preferences and GSON)_
 - <b>Create New Tasks:</b> Users can add new tasks to the list.
 - <b>Edit Tasks:</b> Users can edit any task. Including marking it as done.
+- <b>User Interface:</b> [Taskaty Mobile App UI on My behance](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
 
 #### Additional Features:
 - <b>Search Functionality:</b> Users can search for tasks using keywords, filter tasks by month, or categorize them.
 - <b>Remove Tasks:</b> Users can remove existing tasks.
 - <b>Sample Tasks</b> for first time users. _(Using shared prefrences)_
-- <b>Date Picker</b> for due date of the rask
-
-    
-## UI/UX
-- [Taskaty Mobile App UI on My behance](https://www.behance.net/gallery/184474407/Taskaty-Mobile-App-UI)
+- <b>Date Picker</b> for due date of the rask.
 
 ## Demo
 
