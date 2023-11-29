@@ -14,8 +14,8 @@ Taskaty has CRUD (Create, Read, Update, Delete) functionality, to manage the tas
 #### Additional Features:
 - <b>Search Functionality:</b> Users can search for tasks using keywords, filter tasks by month, or categorize them.
 - <b>Remove Tasks:</b> Users can remove existing tasks.
-- Sample Tasks for first time users.
-- Date Picking.
+- <b>Sample Tasks</b> for first time users. _(Using shared prefrences)_
+- <b>Date Picker</b> for due date of the rask
 
     
 ## UI/UX
