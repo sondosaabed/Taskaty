@@ -43,7 +43,7 @@ public class FoundTasks extends AppCompatActivity{
                 getIntent().getStringExtra("month"),
                 getIntent().getStringExtra("category"));
 
-        ArrayAdapter<Task> listAdapter = new ArrayAdapter<>(this,
+        ArrayAdapter<Task> listAdapter = new ArrayAdapter<Task>(this,
                 android.R.layout.simple_list_item_1,
                 foundtasks);
         getTasks().setAdapter(listAdapter);
@@ -66,8 +66,11 @@ public class FoundTasks extends AppCompatActivity{
             When a user clicks on a list item they are allowed to edit it
          */
         tasks.setOnItemClickListener((parent, view, position, id) -> {
+            ArrayAdapter<Task> listAdapter = (ArrayAdapter<Task>) parent.getAdapter();
+            Task selectedTask = listAdapter.getItem(position);
+
             Intent intent = new Intent(this, EditTask.class);
-            intent.putExtra("selectedTaskID", position);
+            intent.putExtra("selectedTaskID", selectedTask.getId());
             startActivity(intent);
         });
     }

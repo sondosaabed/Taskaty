@@ -44,7 +44,8 @@ public class Preferences {
         return new ArrayList<>(Arrays.asList(t1, t2));
     }
 
-    public static ArrayList<Task> loadTasks() {
+    public static ArrayList<Task> loadTasks(Context context) {
+        preferences = getPreferences(context);
         Gson gson = new Gson();
         String str = preferences.getString(DATA, "");
         Task[] tasks = gson.fromJson(str, Task[].class);

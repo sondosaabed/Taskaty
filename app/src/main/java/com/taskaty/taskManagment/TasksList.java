@@ -39,6 +39,8 @@ public class TasksList extends AppCompatActivity{
         setTasks(findViewById(R.id.taskListView));
         setSearch(findViewById(R.id.search));
 
+        Tasks.initTasks(this);
+
         ArrayAdapter<Task> listAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
                 Tasks.getTaskaty());

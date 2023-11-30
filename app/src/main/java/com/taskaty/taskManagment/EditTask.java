@@ -94,10 +94,13 @@ public class EditTask extends AppCompatActivity {
 
         if(date != null){
             datStr = date.getDayOfMonth() +"-" +
-                    date.getMonth() +"-"+
+                    date.getMonthValue() +"-"+
                     date.getYear();
         }
-        getDate().setText(datStr);
+        if(!datStr.equals("0-0-0"))
+            getDate().setText(datStr);
+        else
+            getDate().setText("");
 
         String category = taskToUpdate.getCategory();
         // I tried to use asList it only worked for api 34 so I had to iterate through an array
@@ -144,8 +147,9 @@ public class EditTask extends AppCompatActivity {
             /*
                 Handling the date as a string
              */
+            LocalDate date = null;
+
             String dateStr = getDate().getText().toString().trim();
-            LocalDate date;
 
             if(!dateStr.isEmpty()){
                 String[] dateElments = dateStr.split("-");
@@ -155,9 +159,6 @@ public class EditTask extends AppCompatActivity {
                 int day = Integer.parseInt(dateElments[0]);
 
                 date = LocalDate.of(year, month,day);
-            }
-            else{
-                date = null;
             }
 
             Boolean isDone = getIsDone().isChecked();

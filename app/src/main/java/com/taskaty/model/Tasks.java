@@ -1,5 +1,6 @@
 package com.taskaty.model;
 
+import android.content.Context;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -15,10 +16,15 @@ import java.util.Locale;
         - Search by (keyword, month, category)
  */
 public class Tasks {
-    private static ArrayList<Task> tasks = Preferences.loadTasks();
+    private static ArrayList<Task> tasks;
     /*
         Operations on the list
      */
+
+    public static void initTasks(Context context){
+        tasks = Preferences.loadTasks(context);
+    }
+
     public static void addTask(Task task){
         getTaskaty().add(task);
         //When I add a new Task I set the ID of the object Task as their index in the arrayList
@@ -54,20 +60,26 @@ public class Tasks {
             - Month Filter on the list
             - Category Filter on the list
          */
-        ArrayList<Task> foundtasks = new ArrayList<>();
+        ArrayList<Task> foundTasks = new ArrayList<>();
         ArrayList<Task> tasks = Tasks.getTaskaty();
 
         for(Task task: tasks){
-            boolean containsKeyword = task.getTittle().contains(keyword.toLowerCase(Locale.ROOT));
+            // I make them both lower case
+            boolean containsKeyword = task.getTittle().toLowerCase().contains(keyword.toLowerCase());
             boolean inCategory = task.getCategory().equals(category) || category.equals("all");
-            boolean inMonth = task.getDueDate().getMonth().equals(
-                    LocalDate.parse(month.toUpperCase(Locale.ROOT)))
-                    || month.equals("all");
+            LocalDate date =task.getDueDate();
+            boolean inMonth = true;
+
+            if(date!=null &&  !month.equals("all")) {
+                inMonth = (task.getDueDate().getMonthValue() ==
+                        LocalDate.parse(month.toUpperCase(Locale.ROOT)).getMonthValue())
+                       ;
+            }
             if(containsKeyword && inCategory && inMonth){
-                foundtasks.add(task);
+                foundTasks.add(task);
             }
         }
-        return foundtasks;
+        return foundTasks;
     }
 
     /*
